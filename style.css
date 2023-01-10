@@ -15,3 +15,36 @@
     position: absolute;
     background-color: blue;
 }
+
+#right {
+    width: 10px;
+    height: 90px;
+    position: relative;
+    right: 0px;
+    top: 5px;
+    background-color: yellow;
+}
+#left {
+    width: 10px;
+    height: 90px;
+    position: relative;
+    left: 0px;
+    top: 5px;
+    background-color: green;
+}
+#top {
+    width: 90px;
+    height: 10px;
+    position: relative;
+    right: 5px;
+    top: 0px;
+    background-color: purple;
+}
+#bottom {
+    width: 10px;
+    height: 90px;
+    position: relative;
+    right: 5px;
+    bottom: 0px;
+    background-color: orangered;
+}
