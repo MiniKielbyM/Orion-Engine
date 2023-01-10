@@ -19,7 +19,7 @@
 #right {
     width: 10px;
     height: 90px;
-    position: relative;
+    position: absolute;
     right: 0px;
     top: 5px;
     background-color: yellow;
@@ -27,7 +27,7 @@
 #left {
     width: 10px;
     height: 90px;
-    position: relative;
+    position: absolute;
     left: 0px;
     top: 5px;
     background-color: green;
@@ -35,15 +35,15 @@
 #top {
     width: 90px;
     height: 10px;
-    position: relative;
+    position: sticky;
     right: 5px;
     top: 0px;
     background-color: purple;
 }
 #bottom {
-    width: 10px;
-    height: 90px;
-    position: relative;
+    width: 90px;
+    height: 10px;
+    position: absolute;
     right: 5px;
     bottom: 0px;
     background-color: orangered;
