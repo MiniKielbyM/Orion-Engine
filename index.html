@@ -60,7 +60,10 @@
                 console.log("you win");
               }
               else if (checkCollision("char", "npc")) {
-                 document.getElementById()
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
               }
             }
             break;
@@ -71,6 +74,12 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
+              }
             }
             break;
           case 'ArrowRight':
@@ -80,6 +89,12 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
+              }
             }
             break;
           case 'ArrowDown':
@@ -88,6 +103,12 @@
               div.style.top = yAxis + 'px';
               if (checkCollision("char", "win")) {
                 console.log("you win");
+              }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
               }
             }
             break;
