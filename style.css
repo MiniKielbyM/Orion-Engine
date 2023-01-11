@@ -57,3 +57,23 @@
     top: 35%;
     right: 200px;
 }
+
+#npc {
+    width: 55px;
+    height: 55px;
+    background-color: darkred;
+    position: absolute;
+    left: 20%;
+    bottom: 40%;
+}
+
+#dialoug {
+    width: 80%;
+    height: 300px;
+    bottom: 0px;
+    left: 10%;
+    background-color: gray;
+    border-radius: 25px;
+    border-width: 10px;
+    border-color: darkgrey;
+}

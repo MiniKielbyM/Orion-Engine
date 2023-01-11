@@ -17,6 +17,8 @@
     <div id="bottom"></div>
   </div>
   <div id="win"></div>
+  <div id="npc"></div>
+  <div id="dialoug"><p>this is some text that is being said</p></div>
   <script type="text/javascript">
     (function () {
       //assorted functions code begin
@@ -51,7 +53,11 @@
               xAxis -= moveSpeed;
               div.style.left = xAxis + 'px';
               if (checkCollision("char", "win")) {
-                return;
+                console.log("you win");
+              }
+              else if(checkCollision("char", "npc"))
+              {
+
               }
             }
             break;
@@ -60,7 +66,7 @@
               yAxis -= moveSpeed;
               div.style.top = yAxis + 'px';
               if (checkCollision("char", "win")) {
-                return;
+                console.log("you win");
               }
             }
             break;
@@ -69,7 +75,7 @@
               xAxis += moveSpeed;
               div.style.left = xAxis + 'px';
               if (checkCollision("char", "win")) {
-                return;
+                console.log("you win");
               }
             }
             break;
@@ -78,7 +84,7 @@
               yAxis += moveSpeed;
               div.style.top = yAxis + 'px';
               if (checkCollision("char", "win")) {
-                return;
+                console.log("you win");
               }
             }
             break;
