@@ -16,6 +16,7 @@
     <div id="top"></div>
     <div id="bottom"></div>
   </div>
+  <div id="win"></div>
   <script type="text/javascript">
     (function () {
       //assorted functions code begin
@@ -49,24 +50,36 @@
             if (!checkCollision("char", "right")) {
               xAxis -= moveSpeed;
               div.style.left = xAxis + 'px';
+              if (checkCollision("char", "win")) {
+                return;
+              }
             }
             break;
           case 'ArrowUp':
             if (!checkCollision("char", "bottom")) {
               yAxis -= moveSpeed;
               div.style.top = yAxis + 'px';
+              if (checkCollision("char", "win")) {
+                return;
+              }
             }
             break;
           case 'ArrowRight':
             if (!checkCollision("char", "left")) {
               xAxis += moveSpeed;
               div.style.left = xAxis + 'px';
+              if (checkCollision("char", "win")) {
+                return;
+              }
             }
             break;
           case 'ArrowDown':
             if (!checkCollision("char", "top")) {
               yAxis += moveSpeed;
               div.style.top = yAxis + 'px';
+              if (checkCollision("char", "win")) {
+                return;
+              }
             }
             break;
         }
