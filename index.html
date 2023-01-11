@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Orion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra Petch">
+</head>
+
+<body>
+  <div id="char"></div>
+  <div id="box">
+    <div id="right"></div>
+    <div id="left"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
+  </div>
+  <div id="win"></div>
+  <div id="npc">
+  </div>
+  <div id="dialoug">
+    <h1 id="dialougText">this is some text that is being said</h1>
+  </div>
+  <script type="text/javascript">
+    (function () {
+      //assorted functions code begin
+      function collide(div1ID, div2ID) {
+        const domRect1 = document.getElementById(div1ID).getBoundingClientRect();
+        const domRect2 = document.getElementById(div2ID).getBoundingClientRect();
+        return !(
+          domRect1.top > domRect2.bottom ||
+          domRect1.right < domRect2.left ||
+          domRect1.bottom < domRect2.top ||
+          domRect1.left > domRect2.right
+        );
+      }
+      function checkCollision(div1, div2) {
+        if (collide(div1, div2) === true) {
+          console.log("collision detected between " + div1 + " and " + div2)
+          return true;
+        }
+        else {
+          console.log("no collision detected")
+          return false;
+        }
+      }
+      var xAxis = 50;
+      var yAxis = 50;
+      const moveSpeed = 10;
+      const div = document.getElementById('char');
+      document.onkeydown = function (event) {
+        switch (event.key) {
+          case 'ArrowLeft':
+            if (!checkCollision("char", "right")) {
+              xAxis -= moveSpeed;
+              div.style.left = xAxis + 'px';
+              if (checkCollision("char", "win")) {
+                console.log("you win");
+              }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
+              }
+            }
+            break;
+          case 'ArrowUp':
+            if (!checkCollision("char", "bottom")) {
+              yAxis -= moveSpeed;
+              div.style.top = yAxis + 'px';
+              if (checkCollision("char", "win")) {
+                console.log("you win");
+              }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
+              }
+            }
+            break;
+          case 'ArrowRight':
+            if (!checkCollision("char", "left")) {
+              xAxis += moveSpeed;
+              div.style.left = xAxis + 'px';
+              if (checkCollision("char", "win")) {
+                console.log("you win");
+              }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
+              }
+            }
+            break;
+          case 'ArrowDown':
+            if (!checkCollision("char", "top")) {
+              yAxis += moveSpeed;
+              div.style.top = yAxis + 'px';
+              if (checkCollision("char", "win")) {
+                console.log("you win");
+              }
+              else if (checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "visible";
+              }
+              else if (!checkCollision("char", "npc")) {
+                document.getElementById("dialoug").style.visibility = "hidden";
+              }
+            }
+            break;
+        }
+
+      };
+      //player movement code end
+    })();
+  </script>
+</body>
+
+</html>
