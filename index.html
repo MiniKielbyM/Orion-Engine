@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width" />
   <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra Petch">
 </head>
 
 <body>
@@ -17,8 +18,11 @@
     <div id="bottom"></div>
   </div>
   <div id="win"></div>
-  <div id="npc"></div>
-  <div id="dialoug"><p>this is some text that is being said</p></div>
+  <div id="npc">
+  </div>
+  <div id="dialoug">
+    <h1 id="dialougText">this is some text that is being said</h1>
+  </div>
   <script type="text/javascript">
     (function () {
       //assorted functions code begin
@@ -55,8 +59,7 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
-              else if(checkCollision("char", "npc"))
-              {
+              else if (checkCollision("char", "npc")) {
 
               }
             }

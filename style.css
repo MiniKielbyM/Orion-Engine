@@ -74,6 +74,14 @@
     left: 10%;
     background-color: gray;
     border-radius: 25px;
-    border-width: 10px;
-    border-color: darkgrey;
+    border-width: 100px;
+    border-color: rgb(255, 0, 0);
+    position: absolute;
+}
+
+#dialougText {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-family: 'Chakra Petch', serif;
 }
