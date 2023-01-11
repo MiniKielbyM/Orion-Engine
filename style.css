@@ -9,42 +9,42 @@
 
 #box {
     width: 100px;
-    height: 100px;
-    right: 500px;
-    top: 500px;
+    height: 600px;
+    right: 50%;
+    top: 0px;
     position: absolute;
     background-color: blue;
 }
 
 #right {
     width: 10px;
-    height: 90px;
+    height: 90%;
     position: absolute;
-    right: 0px;
+    right: -5px;
     top: 5px;
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0);
 }
 #left {
     width: 10px;
-    height: 90px;
+    height: 90%;
     position: absolute;
-    left: 0px;
+    left: -5px;
     top: 5px;
-    background-color: green;
+    background-color: rgba(255, 255, 0, 0);
 }
 #top {
-    width: 90px;
+    width: 90%;
     height: 10px;
     position: sticky;
     right: 5px;
-    top: 0px;
-    background-color: purple;
+    top: -5px;
+    background-color: rgba(255, 255, 0, 0);
 }
 #bottom {
-    width: 90px;
+    width: 90%;
     height: 10px;
     position: absolute;
     right: 5px;
-    bottom: 0px;
-    background-color: orangered;
+    bottom: -5px;
+    background-color: rgba(255, 255, 0, 0);
 }

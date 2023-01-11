@@ -46,25 +46,28 @@
       document.onkeydown = function (event) {
         switch (event.key) {
           case 'ArrowLeft':
-            if (null) {
+            if (!checkCollision("char", "right")) {
               xAxis -= moveSpeed;
               div.style.left = xAxis + 'px';
             }
             break;
           case 'ArrowUp':
-            yAxis -= moveSpeed;
-            div.style.top = yAxis + 'px';
-            checkCollision("char", "box");
+            if (!checkCollision("char", "bottom")) {
+              yAxis -= moveSpeed;
+              div.style.top = yAxis + 'px';
+            }
             break;
           case 'ArrowRight':
-            xAxis += moveSpeed;
-            div.style.left = xAxis + 'px';
-            checkCollision("char", "box");
+            if (!checkCollision("char", "left")) {
+              xAxis += moveSpeed;
+              div.style.left = xAxis + 'px';
+            }
             break;
           case 'ArrowDown':
-            yAxis += moveSpeed;
-            div.style.top = yAxis + 'px';
-            checkCollision("char", "box");
+            if (!checkCollision("char", "top")) {
+              yAxis += moveSpeed;
+              div.style.top = yAxis + 'px';
+            }
             break;
         }
 
