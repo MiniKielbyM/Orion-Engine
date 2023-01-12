@@ -24,6 +24,7 @@
     top: 5px;
     background-color: rgba(255, 255, 0, 0);
 }
+
 #left {
     width: 10px;
     height: 100%;
@@ -32,6 +33,7 @@
     top: 5px;
     background-color: rgba(255, 255, 0, 0);
 }
+
 #top {
     width: 100%;
     height: 10px;
@@ -40,6 +42,7 @@
     top: -5px;
     background-color: rgba(255, 255, 0, 0);
 }
+
 #bottom {
     width: 100%;
     height: 10px;
@@ -67,7 +70,7 @@
     bottom: 40%;
 }
 
-#dialoug {
+#dialogue {
     width: 80%;
     height: 300px;
     bottom: 0px;
@@ -80,9 +83,90 @@
     visibility: hidden;
 }
 
-#dialougText {
+#dialogueText {
     position: absolute;
     top: 5%;
     left: 5%;
     font-family: 'Chakra Petch', serif;
+}
+
+#rightNpc {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    right: -1px;
+    top: 5px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#leftNpc {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    left: -1px;
+    top: 5px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#topNpc {
+    width: 100%;
+    height: 10px;
+    position: sticky;
+    right: 5px;
+    top: -1px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#bottomNpc {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    right: 5px;
+    bottom: -1px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#pushableBox {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: deepskyblue;
+    left: 400px;
+    bottom: 200px;
+}
+
+#rightPush {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    right: -1px;
+    top: 5px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#leftPush {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    left: -1px;
+    top: 5px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#topPush {
+    width: 100%;
+    height: 10px;
+    position: sticky;
+    right: 5px;
+    top: -1px;
+    background-color: rgba(255, 255, 0, 0);
+}
+
+#bottomPush {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    right: 5px;
+    bottom: -1px;
+    background-color: rgba(255, 255, 0, 0);
 }
