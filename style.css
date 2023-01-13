@@ -131,8 +131,8 @@
     height: 40px;
     position: absolute;
     background-color: deepskyblue;
-    left: 400px;
-    bottom: 200px;
+    left: 30%;
+    bottom: 20%;
 }
 
 #rightPush {
@@ -169,4 +169,8 @@
     right: 5px;
     bottom: -1px;
     background-color: rgba(255, 255, 0, 0);
+}
+
+body {
+    overflow: hidden;
 }

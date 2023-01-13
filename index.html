@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width" />
   <link href="style.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra Petch">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
 <body>
@@ -51,15 +52,17 @@
           console.log("collision detected between " + div1 + " and " + div2)
           return true;
         }
-        else {
+        {
           console.log("no collision detected")
           return false;
         }
       }
       var xAxis = 50;
       var yAxis = 50;
-      var xPush = document.getElementById("pushableBox").style.left;
-      var yPush = document.getElementById("pushableBox").style.bottom;
+      var xPushGet = $('#pushableBox').css('left');
+      var yPushGet = $('#pushableBox').css('bottom');
+      var xPush = parseFloat(xPushGet)
+      var yPush = parseFloat(yPushGet)
       console.log(xPush);
       console.log(yPush);
       const moveSpeed = 10;
@@ -74,15 +77,17 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
-              else if (checkCollision("char", "npc")) {
+              if (checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "visible";
               }
-              else if (!checkCollision("char", "npc")) {
+              if (!checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "hidden";
               }
-              else if (checkCollision("char", "rightPush"))
-              {
-                
+              if (checkCollision("char", "rightPush")) {
+
+                console.log(xPushGet)
+                xPush -= moveSpeed;
+                document.getElementById("pushableBox").style.left = xPush + "px";
               }
             }
             break;
@@ -94,11 +99,16 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
-              else if (checkCollision("char", "npc")) {
+              if (checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "visible";
               }
-              else if (!checkCollision("char", "npc")) {
+              if (!checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "hidden";
+              }
+              if (checkCollision("char", "bottomPush")) {
+                console.log(yPushGet);
+                yPush += moveSpeed;
+                document.getElementById("pushableBox").style.bottom = yPush + "px";
               }
             }
             break;
@@ -110,11 +120,17 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
-              else if (checkCollision("char", "npc")) {
+              if (checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "visible";
               }
-              else if (!checkCollision("char", "npc")) {
+              if (!checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "hidden";
+              }
+              if (checkCollision("char", "leftPush"))
+              {
+                console.log(xPushGet);
+                xPush += moveSpeed;
+                document.getElementById("pushableBox").style.left = xPush + "px";
               }
             }
             break;
@@ -126,11 +142,17 @@
               if (checkCollision("char", "win")) {
                 console.log("you win");
               }
-              else if (checkCollision("char", "npc")) {
+              if (checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "visible";
               }
-              else if (!checkCollision("char", "npc")) {
+              if (!checkCollision("char", "npc")) {
                 document.getElementById("dialogue").style.visibility = "hidden";
+              }
+              if (checkCollision("char", "topPush"))
+              {
+                console.log(yPushGet)
+                yPush -= moveSpeed;
+                document.getElementById("pushableBox").style.bottom = yPush;
               }
             }
             break;
