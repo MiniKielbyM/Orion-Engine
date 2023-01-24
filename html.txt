@@ -2,16 +2,24 @@
 <html>
 
 <head>
-  <title>Orion</title>
+
   <meta charset="utf-8">
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
   <meta name="viewport" content="width=device-width" />
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/x-icon" href="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra Petch">
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
 <body>
-  <div id="sidebar"></div>
+  <div id="screenBorderTop"></div>
+  <div id="screenBorderLeft"></div>
+  <div id="screenBorderBottom"></div>
+  <div id="screenBorderRight"></div>
 </body>
 
 </html>
