@@ -10,7 +10,6 @@
     }
   </style>
   <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/x-icon" href="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra Petch">
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
