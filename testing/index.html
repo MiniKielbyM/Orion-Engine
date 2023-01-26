@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Example Mouse Tracker</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #playerObj {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="playerObj"></div>
+    <script>
+        onmousemove = function (e) {
+            console.log("mouse location:", e.clientX, e.clientY);
+            var pos = e;
+            var element;
+            element = document.getElementById("playerObj")
+            element.style.left = pos.x + "px";
+            element.style.top = pos.y + "px";
+        }      
+    </script>
+</body>
+
+</html>

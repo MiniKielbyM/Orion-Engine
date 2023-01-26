@@ -1,176 +1,71 @@
-#char {
+body {
+    overflow: hidden;
+}
+
+#sidebar {
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    background-color: grey;
+}
+
+#logo {
+    width: 200px;
+}
+
+#topLogo {
+    height: 160px;
+    position: absolute;
+    top: 0px;
+    width: 400px;
+    background-color: rgb(43, 43, 43);
+}
+
+#logoText {
+    display: inline;
+    color: white;
+    position: absolute;
+    bottom: 0%;
+    font-size: 64px;
+    font-family: 'Alegreya Sans SC', serif;
+    left: 40%
+}
+
+p {
+    font-family: 'Alegreya Sans SC', serif;
+}
+
+#playerButton {
+    position: absolute;
+    top: 20%;
+    left: 20%;
     width: 50px;
     height: 50px;
-    left: 50px;
-    top: 50px;
+    border-color: rgba(43, 43, 43, 0);
+    background-color: rgba(43, 43, 43, 0);
+}
+
+#playerImg {
+    width: 50px;
+    height: 50px;
+    left: -3px;
+    top: -3px;
     position: absolute;
     background-color: red;
 }
 
-#box {
-    width: 100px;
-    height: 600px;
-    right: 50%;
-    top: 0px;
+#playerObj {
+    width: 50px;
+    height: 50px;
+    background-color: red;
     position: absolute;
-    background-color: blue;
 }
 
-#right {
-    width: 10px;
-    height: 100%;
+#playerObjBase {
+    width: 50px;
+    height: 50px;
+    background-color: red;
     position: absolute;
-    right: -5px;
-    top: 5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#left {
-    width: 10px;
-    height: 100%;
-    position: absolute;
-    left: -5px;
-    top: 5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#top {
-    width: 100%;
-    height: 10px;
-    position: sticky;
-    right: 5px;
-    top: -5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#bottom {
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    right: 5px;
-    bottom: -5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#win {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 203, 0);
-    position: absolute;
-    top: 35%;
-    right: 200px;
-}
-
-#npc {
-    width: 55px;
-    height: 55px;
-    background-color: darkred;
-    position: absolute;
-    left: 20%;
-    bottom: 40%;
-}
-
-#dialogue {
-    width: 80%;
-    height: 300px;
-    bottom: 0px;
-    left: 10%;
-    background-color: gray;
-    border-radius: 25px;
-    border-width: 100px;
-    border-color: rgb(255, 0, 0);
-    position: absolute;
-    visibility: hidden;
-}
-
-#dialogueText {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    font-family: 'Chakra Petch', serif;
-}
-
-#rightNpc {
-    width: 10px;
-    height: 100%;
-    position: absolute;
-    right: -1px;
-    top: 5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#leftNpc {
-    width: 10px;
-    height: 100%;
-    position: absolute;
-    left: -1px;
-    top: 5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#topNpc {
-    width: 100%;
-    height: 10px;
-    position: sticky;
-    right: 5px;
-    top: -1px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#bottomNpc {
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    right: 5px;
-    bottom: -1px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#pushableBox {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    background-color: deepskyblue;
-    left: 30%;
-    bottom: 20%;
-}
-
-#rightPush {
-    width: 10px;
-    height: 100%;
-    position: absolute;
-    right: -1px;
-    top: 5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#leftPush {
-    width: 10px;
-    height: 100%;
-    position: absolute;
-    left: -1px;
-    top: 5px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#topPush {
-    width: 100%;
-    height: 10px;
-    position: sticky;
-    right: 5px;
-    top: -1px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-#bottomPush {
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    right: 5px;
-    bottom: -1px;
-    background-color: rgba(255, 255, 0, 0);
-}
-
-body {
-    overflow: hidden;
 }

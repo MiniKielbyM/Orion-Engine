@@ -6,161 +6,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width" />
   <link href="style.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra Petch">
+  <link rel="icon" type="image/x-icon" href="orion-removebg-preview.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya Sans SC">
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="functions.js"></script>
 </head>
 
 <body>
-  <div id="char"></div>
-  <div id="box">
-    <div id="right"></div>
-    <div id="left"></div>
-    <div id="top"></div>
-    <div id="bottom"></div>
+  <div id="playerObjBase"></div>
+  <div id="sidebar">
+    <div id="topLogo">
+      <img src="orion-removebg-preview.png" alt="logo" id="logo">
+      <h1 id="logoText">rion</h1>
+    </div>
+    <div id="playerSelect"><button onclick="confirmPlayer()" id="playerButton">
+      <div id="playerImg"></div>
+    </button>
+      <p>player</p>
+    </div>
   </div>
-  <div id="win"></div>
-  <div id="npc">
-    <div id="rightNpc"></div>
-    <div id="leftNpc"></div>
-    <div id="topNpc"></div>
-    <div id="bottomNpc"></div>
-  </div>
-  <div id="pushableBox">
-    <div id="rightPush"></div>
-    <div id="leftPush"></div>
-    <div id="topPush"></div>
-    <div id="bottomPush"></div>
-  </div>
-  <div id="dialogue">
-    <h1 id="dialogueText"> This is some dialogue </h1>
-  </div>
-  <script type="text/javascript">
-    (function () {
-      //assorted functions code begin
-      function collide(div1ID, div2ID) {
-        const domRect1 = document.getElementById(div1ID).getBoundingClientRect();
-        const domRect2 = document.getElementById(div2ID).getBoundingClientRect();
-        return !(
-          domRect1.top > domRect2.bottom ||
-          domRect1.right < domRect2.left ||
-          domRect1.bottom < domRect2.top ||
-          domRect1.left > domRect2.right
-        );
-      }
-      function checkCollision(div1, div2) {
-        if (collide(div1, div2) === true) {
-          console.log("collision detected between " + div1 + " and " + div2)
-          return true;
-        }
-        {
-          console.log("no collision detected")
-          return false;
-        }
-      }
-      var xAxis = 50;
-      var yAxis = 50;
-      var xPushGet = $('#pushableBox').css('left');
-      var yPushGet = $('#pushableBox').css('bottom');
-      var xPush = parseFloat(xPushGet)
-      var yPush = parseFloat(yPushGet)
-      console.log(xPush);
-      console.log(yPush);
-      const moveSpeed = 10;
-      const div = document.getElementById('char');
-      document.onkeydown = function (event) {
-        switch (event.key) {
-          case 'ArrowLeft':
-          case 'a':
-            if (!checkCollision("char", "right") && !checkCollision("char", "rightNpc")) {
-              xAxis -= moveSpeed;
-              div.style.left = xAxis + 'px';
-              if (checkCollision("char", "win")) {
-                console.log("you win");
-              }
-              if (checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "visible";
-              }
-              if (!checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "hidden";
-              }
-              if (checkCollision("char", "rightPush")) {
+  <script>
 
-                console.log(xPushGet)
-                xPush -= moveSpeed;
-                document.getElementById("pushableBox").style.left = xPush + "px";
-              }
-            }
-            break;
-          case 'ArrowUp':
-          case 'w':
-            if (!checkCollision("char", "bottom") && !checkCollision("char", "bottomNpc")) {
-              yAxis -= moveSpeed;
-              div.style.top = yAxis + 'px';
-              if (checkCollision("char", "win")) {
-                console.log("you win");
-              }
-              if (checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "visible";
-              }
-              if (!checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "hidden";
-              }
-              if (checkCollision("char", "bottomPush")) {
-                console.log(yPushGet);
-                yPush += moveSpeed;
-                document.getElementById("pushableBox").style.bottom = yPush + "px";
-              }
-            }
-            break;
-          case 'ArrowRight':
-          case 'd':
-            if (!checkCollision("char", "left") && !checkCollision("char", "leftNpc")) {
-              xAxis += moveSpeed;
-              div.style.left = xAxis + 'px';
-              if (checkCollision("char", "win")) {
-                console.log("you win");
-              }
-              if (checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "visible";
-              }
-              if (!checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "hidden";
-              }
-              if (checkCollision("char", "leftPush"))
-              {
-                console.log(xPushGet);
-                xPush += moveSpeed;
-                document.getElementById("pushableBox").style.left = xPush + "px";
-              }
-            }
-            break;
-          case 'ArrowDown':
-          case 's':
-            if (!checkCollision("char", "top") && !checkCollision("char", "topNpc")) {
-              yAxis += moveSpeed;
-              div.style.top = yAxis + 'px';
-              if (checkCollision("char", "win")) {
-                console.log("you win");
-              }
-              if (checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "visible";
-              }
-              if (!checkCollision("char", "npc")) {
-                document.getElementById("dialogue").style.visibility = "hidden";
-              }
-              if (checkCollision("char", "topPush"))
-              {
-                console.log(yPushGet)
-                yPush -= moveSpeed;
-                document.getElementById("pushableBox").style.bottom = yPush;
-              }
-            }
-            break;
-        }
-
-      };
-      //player movement code end
-    })();
   </script>
 </body>
 
