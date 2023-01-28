@@ -1,6 +1,7 @@
 var elemSelectName = "blank";
 function confirmPlacement() {
     elemSelectName = "blank";
+    
 }
 function confirmPlayer() {
     if (elemSelectName == "blank") {
