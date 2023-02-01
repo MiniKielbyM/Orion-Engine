@@ -1,7 +1,10 @@
-var elemSelectName = "blank";
+var elemSelectName = "blank0";
+var elemIdNum = "0";
 function confirmPlacement() {
-    elemSelectName = "blank";
-    
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    document.getElementById("blank" + elemIdNum).id = 
+    elemIdNum += "0";
+    elemSelectName = "blank" + elemIdNum;
 }
 function confirmPlayer() {
     if (elemSelectName == "blank") {
@@ -13,11 +16,11 @@ function confirmPlayer() {
         var clone = elem.cloneNode(true);
 
         // Update the ID and add a class
-        clone.id = 'playerObj';
+        clone.id = 'playerObj' + elemIdNum;
 
         // Inject it into the DOM
         elem.before(clone);
-        elemSelectName = "playerObj"
+        elemSelectName = "playerObj" + elemIdNum;
         console.log(elemSelectName)
     }
 }
@@ -28,7 +31,7 @@ onmousemove = function (e) {
     //meat and potatoes of the snippet
     var pos = e;
     var element;
-    element = document.getElementById(elemSelectName)
+    element = document.getElementById(elemSelectName + elemIdNum)
     element.style.left = pos.x + "px";
     element.style.top = pos.y + "px";
 }
