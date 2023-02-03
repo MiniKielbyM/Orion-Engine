@@ -1,10 +1,10 @@
-var elemSelectName = "blank0";
+var elemSelectName = "blank";
 var elemIdNum = "0";
 function confirmPlacement() {
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
-    document.getElementById("blank" + elemIdNum).id = 
-    elemIdNum += "0";
     elemSelectName = "blank" + elemIdNum;
+    document.getElementById("blank" + elemIdNum).id = "blank"
+    elemIdNum += "0";
 }
 function confirmPlayer() {
     if (elemSelectName == "blank") {
@@ -31,7 +31,7 @@ onmousemove = function (e) {
     //meat and potatoes of the snippet
     var pos = e;
     var element;
-    element = document.getElementById(elemSelectName + elemIdNum)
+    element = document.getElementsByClassName(elemSelectName)
     element.style.left = pos.x + "px";
     element.style.top = pos.y + "px";
 }

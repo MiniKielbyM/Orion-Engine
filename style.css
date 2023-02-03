@@ -56,11 +56,13 @@ p {
     background-color: red;
 }
 
-#playerObj {
+.playerObj {
     width: 50px;
     height: 50px;
     background-color: red;
     position: absolute;
+    left:0px;
+    top: 0px;
 }
 
 #playerObjBase {
@@ -81,4 +83,10 @@ p {
     border-color: green;
     position: absolute;
     right: 0px;
+}
+
+.blank {
+    position: absolute;
+    left:0px;
+    top:0px;
 }
