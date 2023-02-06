@@ -42,3 +42,7 @@ function addAllCssPlayer(PlayerId) {
     document.getElementById(PlayerId).style.backgroundColor = "red";
     document.getElementById(PlayerId).style.position = "absolute";
 }
+
+function writeToNode() {
+    
+}
