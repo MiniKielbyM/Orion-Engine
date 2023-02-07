@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "browserify-fs": "^1.0.0",
+    "edit-json-file": "^1.7.0",
     "jquery": "^3.6.3",
     "node": "^19.6.0"
   }

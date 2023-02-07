@@ -1,4 +1,4 @@
-const fileSystem = require("browserify-fs")
+const fs = require('fs')
 var elemSelectName = "blank";
 var elemIdNum = "0";
 function confirmPlacement() {
@@ -51,7 +51,7 @@ function writeToJson() {
         "Address": "Little Havana"
     }
     const data = JSON.stringify(client)
-    fileSystem.writeFile("output/assets.json", data, err => {
+    fs.writeFile("output/assets.json", data, err => {
         if (err) {
             console.log("Error writing file", err)
         } else {
