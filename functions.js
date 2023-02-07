@@ -1,3 +1,4 @@
+const fileSystem = require("browserify-fs")
 var elemSelectName = "blank";
 var elemIdNum = "0";
 function confirmPlacement() {
@@ -43,6 +44,18 @@ function addAllCssPlayer(PlayerId) {
     document.getElementById(PlayerId).style.position = "absolute";
 }
 
-function writeToNode() {
-    
+function writeToJson() {
+    const client = {
+        "Name": "Mini Corp.",
+        "Order_count": 83,
+        "Address": "Little Havana"
+    }
+    const data = JSON.stringify(client)
+    fileSystem.writeFile("output/assets.json", data, err => {
+        if (err) {
+            console.log("Error writing file", err)
+        } else {
+            console.log('JSON data is written to the file successfully')
+        }
+    })
 }
