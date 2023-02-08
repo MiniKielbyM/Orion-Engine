@@ -1,4 +1,3 @@
-const fs = require('fs')
 var elemSelectName = "blank";
 var elemIdNum = "0";
 function confirmPlacement() {
@@ -25,6 +24,26 @@ function confirmPlayer() {
         console.log(elemSelectName)
     }
 }
+
+function confirmNpc() {
+    if (elemSelectName == "blank") {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#npcObjBase');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'npcObj' + elemIdNum;
+
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "npcObj" + elemIdNum;
+        addAllCssNpc(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
 onmousemove = function (e) {
     //Logging purposes
     console.log("mouse location:", e.clientX, e.clientY);
@@ -44,18 +63,9 @@ function addAllCssPlayer(PlayerId) {
     document.getElementById(PlayerId).style.position = "absolute";
 }
 
-function writeToJson() {
-    const client = {
-        "Name": "Mini Corp.",
-        "Order_count": 83,
-        "Address": "Little Havana"
-    }
-    const data = JSON.stringify(client)
-    fs.writeFile("output/assets.json", data, err => {
-        if (err) {
-            console.log("Error writing file", err)
-        } else {
-            console.log('JSON data is written to the file successfully')
-        }
-    })
+function addAllCssNpc(NpcId) {
+    document.getElementById(NpcId).style.width = "50px";
+    document.getElementById(NpcId).style.height = "50px";
+    document.getElementById(NpcId).style.backgroundColor = "darkRed";
+    document.getElementById(NpcId).style.position = "absolute";
 }

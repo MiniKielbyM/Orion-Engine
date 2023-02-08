@@ -61,12 +61,21 @@ p {
     background-color: red;
 }
 
+#npcImg {
+    width: 50px;
+    height: 50px;
+    left: 3px;
+    top: 50px;
+    position: absolute;
+    background-color: darkRed;
+}
+
 .playerObj {
     width: 50px;
     height: 50px;
     background-color: red;
     position: absolute;
-    left:0px;
+    left: 0px;
     top: 0px;
 }
 
@@ -92,6 +101,6 @@ p {
 
 .blank {
     position: absolute;
-    left:0px;
-    top:0px;
+    left: 0px;
+    top: 0px;
 }
