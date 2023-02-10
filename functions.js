@@ -1,10 +1,36 @@
-const fs = require('fs')
+var obj = new Array();
+var objCount = 0;
 var elemSelectName = "blank";
 var elemIdNum = "0";
-function confirmPlacement() {
+var ConfirmElem = null;
+function confirmPlacementPlayer() {
+    ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
     elemSelectName = "blank"
     elemIdNum += "0";
+    obj[objCount] = {
+        "player": {
+            "x": document.getElementById(ConfirmElem).style.left,
+            "y": document.getElementById(ConfirmElem).style.top,
+            "id": ConfirmElem
+        }
+    }
+    objCount++;
+}
+function confirmPlacementNpc() {
+    ConfirmElem = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    elemIdNum += "0";
+    document.getElementById("npcText").style.visibility = "visible";
+    obj[objCount] = {
+        "npc": {
+            "x": document.getElementById(ConfirmElem).style.left,
+            "y": document.getElementById(ConfirmElem).style.top,
+            "id": ConfirmElem
+        }
+    }
+    objCount++;
 }
 function confirmPlayer() {
     if (elemSelectName == "blank") {
@@ -22,6 +48,26 @@ function confirmPlayer() {
         elem.before(clone);
         elemSelectName = "playerObj" + elemIdNum;
         addAllCssPlayer(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
+
+function confirmNpc() {
+    if (elemSelectName == "blank") {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#npcObjBase');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'npcObj' + elemIdNum;
+
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "npcObj" + elemIdNum;
+        addAllCssNpc(elemSelectName)
         console.log(elemSelectName)
     }
 }
@@ -44,18 +90,29 @@ function addAllCssPlayer(PlayerId) {
     document.getElementById(PlayerId).style.position = "absolute";
 }
 
-function writeToJson() {
-    const client = {
-        "Name": "Mini Corp.",
-        "Order_count": 83,
-        "Address": "Little Havana"
+function addAllCssNpc(NpcId) {
+    document.getElementById(NpcId).style.width = "50px";
+    document.getElementById(NpcId).style.height = "50px";
+    document.getElementById(NpcId).style.backgroundColor = "darkRed";
+    document.getElementById(NpcId).style.position = "absolute";
+}
+
+function downloadFile() {
+    var filename = "Assets.json";
+    var blob = new Blob([JSON.stringify(obj)], { type: 'text/plain' });
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(blob, filename);
+    } else {
+        var e = document.createEvent('MouseEvents'),
+            a = document.createElement('a');
+        a.download = filename
+        a.href = window.URL.createObjectURL(blob);
+        a.dataset.downloadurl = ['text/plain', a.download, a.href].join(':');
+        e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
     }
-    const data = JSON.stringify(client)
-    fs.writeFile("output/assets.json", data, err => {
-        if (err) {
-            console.log("Error writing file", err)
-        } else {
-            console.log('JSON data is written to the file successfully')
-        }
-    })
+}
+
+function DebugObj() {
+    console.log(obj)
 }

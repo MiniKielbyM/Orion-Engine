@@ -61,12 +61,21 @@ p {
     background-color: red;
 }
 
+#npcImg {
+    width: 50px;
+    height: 50px;
+    left: 3px;
+    top: 50px;
+    position: absolute;
+    background-color: darkRed;
+}
+
 .playerObj {
     width: 50px;
     height: 50px;
     background-color: red;
     position: absolute;
-    left:0px;
+    left: 0px;
     top: 0px;
 }
 
@@ -90,8 +99,31 @@ p {
     right: 0px;
 }
 
+#confirmNpcText {
+    width: 59px;
+    height: 25px;
+    text-align: center;
+    background-color: rgb(29, 116, 29);
+    border-radius: 25px;
+    color: white;
+    border-width: 3px;
+    border-color: green;
+    position: absolute;
+    right: 0px;
+}
+
 .blank {
     position: absolute;
-    left:0px;
-    top:0px;
+    left: 0px;
+    top: 0px;
+}
+
+#npcText {
+    position: absolute;
+    top: 40px;
+    left: 20%;
+    width: 500px;
+    height: 100px;
+    text-align: left;
+    visibility: hidden;
 }
