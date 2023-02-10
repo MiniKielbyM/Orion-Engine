@@ -109,7 +109,7 @@ p {
     border-width: 3px;
     border-color: green;
     position: absolute;
-    right: 0px;
+    right: 41%;
 }
 
 .blank {
@@ -125,5 +125,8 @@ p {
     width: 500px;
     height: 100px;
     text-align: left;
+}
+
+#npcTextArea {
     visibility: hidden;
 }

@@ -3,6 +3,8 @@ var objCount = 0;
 var elemSelectName = "blank";
 var elemIdNum = "0";
 var ConfirmElem = null;
+var npcText = "";
+var npcTextConfirmed = true;
 function confirmPlacementPlayer() {
     ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
@@ -22,18 +24,27 @@ function confirmPlacementNpc() {
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
     elemSelectName = "blank"
     elemIdNum += "0";
-    document.getElementById("npcText").style.visibility = "visible";
+    document.getElementById("npcTextArea").style.visibility = "visible";
+    npcTextConfirmed = false;
+}
+function confirmNpcText() {
+    console.log(document.getElementById("npcText").value);
+    npcText = document.getElementById("npcText").value;
     obj[objCount] = {
         "npc": {
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
-            "id": ConfirmElem
+            "id": ConfirmElem,
+            "text": npcText
         }
     }
     objCount++;
+    npcTextConfirmed = true;
+    npcText = ""
+    document.getElementById("npcTextArea").style.visibility = "hidden";
 }
 function confirmPlayer() {
-    if (elemSelectName == "blank") {
+    if (elemSelectName == "blank" && npcTextConfirmed == true) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#playerObjBase');
@@ -53,7 +64,7 @@ function confirmPlayer() {
 }
 
 function confirmNpc() {
-    if (elemSelectName == "blank") {
+    if (elemSelectName == "blank" && npcTextConfirmed == true) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#npcObjBase');
