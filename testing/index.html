@@ -18,19 +18,18 @@
 </head>
 
 <body>
-    <div id="playerObj"></div>
     <input type="button" onclick="downloadFile();" value="Download">
     <script>
         function downloadFile() {
             var obj = { a: 123, b: "4 5 6" };
-            var filename = "download.json";
+            var filename = "Assets.json";
             var blob = new Blob([JSON.stringify(obj)], { type: 'text/plain' });
             if (window.navigator && window.navigator.msSaveOrOpenBlob) {
                 window.navigator.msSaveOrOpenBlob(blob, filename);
             } else {
                 var e = document.createEvent('MouseEvents'),
                     a = document.createElement('a');
-                a.download = filename;
+                a.download = filename
                 a.href = window.URL.createObjectURL(blob);
                 a.dataset.downloadurl = ['text/plain', a.download, a.href].join(':');
                 e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);

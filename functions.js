@@ -1,9 +1,36 @@
+var obj = new Array();
+var objCount = 0;
 var elemSelectName = "blank";
 var elemIdNum = "0";
-function confirmPlacement() {
+var ConfirmElem = null;
+function confirmPlacementPlayer() {
+    ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
     elemSelectName = "blank"
     elemIdNum += "0";
+    obj[objCount] = {
+        "player": {
+            "x": document.getElementById(ConfirmElem).style.left,
+            "y": document.getElementById(ConfirmElem).style.top,
+            "id": ConfirmElem
+        }
+    }
+    objCount++;
+}
+function confirmPlacementNpc() {
+    ConfirmElem = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    elemIdNum += "0";
+    document.getElementById("npcText").style.visibility = "visible";
+    obj[objCount] = {
+        "npc": {
+            "x": document.getElementById(ConfirmElem).style.left,
+            "y": document.getElementById(ConfirmElem).style.top,
+            "id": ConfirmElem
+        }
+    }
+    objCount++;
 }
 function confirmPlayer() {
     if (elemSelectName == "blank") {
@@ -68,4 +95,24 @@ function addAllCssNpc(NpcId) {
     document.getElementById(NpcId).style.height = "50px";
     document.getElementById(NpcId).style.backgroundColor = "darkRed";
     document.getElementById(NpcId).style.position = "absolute";
+}
+
+function downloadFile() {
+    var filename = "Assets.json";
+    var blob = new Blob([JSON.stringify(obj)], { type: 'text/plain' });
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(blob, filename);
+    } else {
+        var e = document.createEvent('MouseEvents'),
+            a = document.createElement('a');
+        a.download = filename
+        a.href = window.URL.createObjectURL(blob);
+        a.dataset.downloadurl = ['text/plain', a.download, a.href].join(':');
+        e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        a.dispatchEvent(e);
+    }
+}
+
+function DebugObj() {
+    console.log(obj)
 }
