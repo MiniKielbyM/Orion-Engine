@@ -15,12 +15,28 @@
 <body>
   <input type="button" onclick="downloadFile();" value="Download">
   <div id="blank"></div>
-  <div id="playerObjBase"><button id="confirm" onclick="confirmPlacementPlayer()">confirm</button></div>
+  <div id="wallObjBase"><button id="confirm" onclick="confirmPlacementWall()">confirm</button></div>
+  <div id="winObjBase"><button id="confirm" onclick="confirmPlacementWin()">confirm</button></div>
   <div id="npcObjBase"><button id="confirm" onclick="confirmPlacementNpc()">confirm</button></div>
+  <div id="playerObjBase"><button id="confirm" onclick="confirmPlacementPlayer()">confirm</button></div>
   <div id="sidebar">
     <div id="topLogo">
       <img src="orion-removebg-preview.png" alt="logo" id="logo">
       <h1 id="logoText">rion</h1>
+    </div>
+    <div id="wallSelect">
+      <button id="wallButton" onclick="confirmWall()">
+        <div id="wallImg">
+          <p id="wallName">wall</p>
+        </div>
+      </button>
+    </div>
+    <div id="winSelect">
+      <button id="winButton" onclick="confirmWin()">
+        <div id="winImg">
+          <p id="winName">win</p>
+        </div>
+      </button>
     </div>
     <div id="playerSelect"><button onclick="confirmPlayer()" id="playerButton">
         <div id="playerImg">
@@ -32,9 +48,14 @@
         <div id="npcImg">
           <p id="npcName">NPC</p>
         </div>
-      </button></div>
+      </button>
+    </div>
   </div>
-  <textarea id="npcText" maxlength="370" placeholder="enter dialouge..."></textarea>
-  <button id="confirmNpcText">Confirm</button>
+  </div>
+  <div id="npcTextArea">
+    <textarea id="npcText" maxlength="370" placeholder="enter dialouge..."></textarea>
+    <button id="confirmNpcText" onclick="confirmNpcText()">Confirm</button>
+  </div>
 </body>
+
 </html>
