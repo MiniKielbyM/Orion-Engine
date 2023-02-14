@@ -19,6 +19,20 @@ function confirmPlacementPlayer() {
     }
     objCount++;
 }
+function confirmPlacementWin() {
+    ConfirmElem = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    elemIdNum += "0";
+    obj[objCount] = {
+        "win": {
+            "x": document.getElementById(ConfirmElem).style.left,
+            "y": document.getElementById(ConfirmElem).style.top,
+            "id": ConfirmElem
+        }
+    }
+    objCount++;
+}
 function confirmPlacementNpc() {
     ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
@@ -82,6 +96,47 @@ function confirmNpc() {
         console.log(elemSelectName)
     }
 }
+
+function confirmWin() {
+    if (elemSelectName == "blank" && npcTextConfirmed == true) {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#winObjBase');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'winObj' + elemIdNum;
+
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "winObj" + elemIdNum;
+        addAllCssWin(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
+
+function confirmWall() {
+    if (elemSelectName == "blank" && npcTextConfirmed == true) {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#wallObjBase');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'wallObj' + elemIdNum;
+
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "wallObj" + elemIdNum;
+        addAllCssWall(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
+
 onmousemove = function (e) {
     //Logging purposes
     console.log("mouse location:", e.clientX, e.clientY);
@@ -99,6 +154,7 @@ function addAllCssPlayer(PlayerId) {
     document.getElementById(PlayerId).style.height = "50px";
     document.getElementById(PlayerId).style.backgroundColor = "red";
     document.getElementById(PlayerId).style.position = "absolute";
+    document.getElementById(PlayerId).firstChild.id = "clientConfirm"
 }
 
 function addAllCssNpc(NpcId) {
@@ -106,6 +162,21 @@ function addAllCssNpc(NpcId) {
     document.getElementById(NpcId).style.height = "50px";
     document.getElementById(NpcId).style.backgroundColor = "darkRed";
     document.getElementById(NpcId).style.position = "absolute";
+    document.getElementById(NpcId).firstChild.id = "clientConfirm"
+}
+
+function addAllCssWin(WinId) {
+    document.getElementById(WinId).style.width = "100px";
+    document.getElementById(WinId).style.height = "100px";
+    document.getElementById(WinId).style.backgroundColor = "rgb(0, 203, 0)";
+    document.getElementById(WinId).style.position = "absolute";
+    document.getElementById(WinId).firstChild.id = "clientConfirm"
+}
+
+function addAllCssWall(WinId) {
+    document.getElementById(WinId).style.backgroundColor = "blue";
+    document.getElementById(WinId).style.position = "absolute";
+    document.getElementById(WinId).firstChild.id = "clientConfirm"
 }
 
 function downloadFile() {
