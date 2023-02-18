@@ -15,10 +15,14 @@
 <body>
   <input type="button" onclick="downloadFile();" value="Download">
   <div id="blank"></div>
-  <div id="wallObjBase"><button id="confirm" onclick="confirmPlacementWall()">confirm</button></div>
-  <div id="winObjBase"><button id="confirm" onclick="confirmPlacementWin()">confirm</button></div>
-  <div id="npcObjBase"><button id="confirm" onclick="confirmPlacementNpc()">confirm</button></div>
-  <div id="playerObjBase"><button id="confirm" onclick="confirmPlacementPlayer()">confirm</button></div>
+  <div id="doorObjBase"><button id="confirm" onclick="confirmPlacementDoor()">Confirm</button></div>
+  <div id="buttonObjBase"><div id="button1"><div id="button2"></div></div><button id="confirmButton" onclick="confirmPlacementButton()">Confirm</button></div>
+  <div id="boxObjBase"><button id="confirm" onclick="confirmPlacementBox()">Confirm</button></div>
+  <div id="hazardObjBase"><button id="confirm" onclick="confirmPlacementHazard()">Confirm</button></div>
+  <div id="wallObjBase"><button id="confirm" onclick="confirmPlacementWall()">Confirm</button></div>
+  <div id="winObjBase"><button id="confirm" onclick="confirmPlacementWin()">Confirm</button></div>
+  <div id="npcObjBase"><button id="confirm" onclick="confirmPlacementNpc()">Confirm</button></div>
+  <div id="playerObjBase"><button id="confirm" onclick="confirmPlacementPlayer()">Confirm</button></div>
   <div id="sidebar">
     <div id="topLogo">
       <img src="orion-removebg-preview.png" alt="logo" id="logo">
@@ -50,11 +54,33 @@
         </div>
       </button>
     </div>
+    <div id="hazardSelect"><button onclick="confirmHazard()" id="hazardButton">
+        <div id="hazardImg">
+          <p id="hazardName">hazard</p>
+        </div>
+      </button>
+    </div>
+    <div id="doorSelect"><button onclick="confirmDoor()" id="doorButton">
+        <div id="doorImg">
+          <p id="doorName">door</p>
+        </div>
+      </button>
+    </div>
   </div>
   </div>
   <div id="npcTextArea">
-    <textarea id="npcText" maxlength="370" placeholder="enter dialouge..."></textarea>
+    <textarea id="npcText" maxlengthhn="370" placeholder="enter dialouge..."></textarea>
     <button id="confirmNpcText" onclick="confirmNpcText()">Confirm</button>
+  </div>
+  <div id="sliders">
+    <button id="wallSizeButton" onclick="confirmSizingWalls()">Confirm</button>
+    <input type="range" min="1" max="100" value="1" step="1" id="input">
+    <input type="range" min="1" max="100" value="1" step="1" id="input2">
+  </div>
+  <div id="sliders2">
+    <button id="hazardSizeButton" onclick="confirmSizingHazards()">Confirm</button>
+    <input type="range" min="1" max="100" value="1" step="1" id="inputH">
+    <input type="range" min="1" max="100" value="1" step="1" id="inputH2">
   </div>
 </body>
 

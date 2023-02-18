@@ -77,6 +77,27 @@ p {
     top: 35%;
     right: 30%;
     width: 50px;
+    text-align: center;
+    height: 50px;
+    border-color: rgba(43, 43, 43, 0);
+    background-color: rgba(43, 43, 43, 0);
+}
+
+#hazardButton {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    width: 50px;
+    height: 50px;
+    border-color: rgba(43, 43, 43, 0);
+    background-color: rgba(43, 43, 43, 0);
+}
+
+#doorButton {
+    position: absolute;
+    top: 45%;
+    right: 30%;
+    width: 50px;
     height: 50px;
     border-color: rgba(43, 43, 43, 0);
     background-color: rgba(43, 43, 43, 0);
@@ -103,6 +124,16 @@ p {
     background-color: darkRed;
 }
 
+#doorImg {
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: hidden;
+    background-color: aqua;
+}
+
 #winImg {
     width: 50px;
     height: 50px;
@@ -121,6 +152,20 @@ p {
     background-color: blue;
 }
 
+#hazardImg {
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background-color: rgb(255, 111, 0);
+}
+
+#hazardName {
+    font-size: 14px;
+    text-align: center;
+}
+
 #playerObj {
     width: 50px;
     height: 50px;
@@ -128,13 +173,6 @@ p {
     position: absolute;
     left: 0px;
     top: 0px;
-}
-
-#playerObjBase {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    visibility: hidden;
 }
 
 #confirm {
@@ -162,6 +200,20 @@ p {
     border-color: green;
     position: absolute;
     left: -10px;
+}
+
+#clientConfirmButton {
+    width: 59px;
+    height: 25px;
+    text-align: center;
+    background-color: rgb(29, 116, 29);
+    border-radius: 25px;
+    color: white;
+    top: -20px;
+    border-width: 3px;
+    border-color: green;
+    position: absolute;
+    left: -20px;
 }
 
 #confirmNpcText {
@@ -195,4 +247,101 @@ p {
 
 #npcTextArea {
     visibility: hidden;
+}
+
+#wallSizingArea {
+
+    position: absolute;
+    top: 40px;
+    left: 25%;
+    width: 500px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 25px;
+    border-color: black;
+}
+
+#sliders {
+    visibility: hidden;
+}
+
+#input2 {
+    appearance: slider-vertical;
+    height: 90%;
+    bottom: 5%;
+    left: 0px;
+    padding: 0%;
+    transform: rotate(180deg);
+    position: absolute;
+}
+
+#input {
+    width: 90%;
+    bottom: 10px;
+    left: 5%;
+    padding: 0%;
+    position: absolute;
+}
+
+#wallSizeButton {
+    width: 59px;
+    height: 25px;
+    text-align: center;
+    background-color: rgb(29, 116, 29);
+    border-radius: 25px;
+    color: white;
+    border-width: 3px;
+    border-color: green;
+    position: absolute;
+    left: 35%;
+    top: 10px;
+}
+
+#hazardSizeButton {
+    width: 59px;
+    height: 25px;
+    text-align: center;
+    background-color: rgb(29, 116, 29);
+    border-radius: 25px;
+    color: white;
+    border-width: 3px;
+    border-color: green;
+    position: absolute;
+    left: 35%;
+    top: 10px;
+}
+
+#sliders2 {
+    visibility: hidden;
+}
+
+#inputH2 {
+    appearance: slider-vertical;
+    height: 90%;
+    bottom: 5%;
+    left: 0px;
+    transform: rotate(180deg);
+    padding: 0%;
+    position: absolute;
+}
+
+#inputH {
+    width: 90%;
+    bottom: 10px;
+    left: 5%;
+    padding: 0%;
+    position: absolute;
+}
+
+#buttonObjBase {
+    visibility: hidden;
+}
+
+#button1 {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(255, 0, 0);
+    top: 5px;
+    left: 5px;
+    position: absolute;
 }
