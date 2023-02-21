@@ -11,6 +11,7 @@ var buttonId = "";
 var wallSizeConfirmed = true;
 var npcTextConfirmed = true;
 var Bclone
+var sidebarOpen = true;
 function confirmPlacementPlayer() {
     ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
@@ -438,3 +439,20 @@ function downloadFile() {
 function DebugObj() {
     console.log(obj)
 }
+
+function hideSidebar() {
+    if (sidebarOpen === true) {
+        document.getElementById("sidebar").style.visibility = "hidden"
+        sidebarOpen = false;
+    }
+    else if (sidebarOpen === false) {
+        document.getElementById("sidebar").style.visibility = "visible"
+        sidebarOpen = true;
+    }
+}
+
+document.addEventListener("keypress", function (event) {
+    if (event.keyCode == 13) {
+        hideSidebar()
+    }
+});
