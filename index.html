@@ -13,10 +13,13 @@
 </head>
 
 <body>
-  <input type="button" onclick="downloadFile();" value="Download">
   <div id="blank"></div>
   <div id="doorObjBase"><button id="confirm" onclick="confirmPlacementDoor()">Confirm</button></div>
-  <div id="buttonObjBase"><div id="button1"><div id="button2"></div></div><button id="confirmButton" onclick="confirmPlacementButton()">Confirm</button></div>
+  <div id="buttonObjBase">
+    <div id="button1">
+      <div id="button2"></div>
+    </div><button id="confirmButton" onclick="confirmPlacementButton()">Confirm</button>
+  </div>
   <div id="boxObjBase"><button id="confirm" onclick="confirmPlacementBox()">Confirm</button></div>
   <div id="hazardObjBase"><button id="confirm" onclick="confirmPlacementHazard()">Confirm</button></div>
   <div id="wallObjBase"><button id="confirm" onclick="confirmPlacementWall()">Confirm</button></div>
@@ -66,6 +69,7 @@
         </div>
       </button>
     </div>
+    <input type="button" onclick="downloadFile();" value="Download" id="Download">
   </div>
   </div>
   <div id="npcTextArea">
@@ -81,6 +85,11 @@
     <button id="hazardSizeButton" onclick="confirmSizingHazards()">Confirm</button>
     <input type="range" min="1" max="100" value="1" step="1" id="inputH">
     <input type="range" min="1" max="100" value="1" step="1" id="inputH2">
+  </div>
+  <div id="sliders3">
+    <button id="DoorSizeButton" onclick="confirmSizingDoor()">Confirm</button>
+    <input type="range" min="1" max="100" value="1" step="1" id="inputD">
+    <input type="range" min="1" max="100" value="1" step="1" id="inputD2">
   </div>
 </body>
 
