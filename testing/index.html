@@ -8,34 +8,31 @@
             height: 3000px;
         }
 
-        #playerObj {
+        #div {
             width: 50px;
             height: 50px;
+            left: 50%;
             background-color: red;
+            position: absolute;
+        }
+
+        #input2 {
+
+            top: 10px;
             position: absolute;
         }
     </style>
 </head>
 
 <body>
-    <input type="button" onclick="downloadFile();" value="Download">
+    <div id="div"></div>
+    <input type="range" min="1" max="100" value="1" step="1" id="input">
+    <input type="range" min="1" max="100" value="1" step="1" id="input2">
     <script>
-        function downloadFile() {
-            var obj = { a: 123, b: "4 5 6" };
-            var filename = "Assets.json";
-            var blob = new Blob([JSON.stringify(obj)], { type: 'text/plain' });
-            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-                window.navigator.msSaveOrOpenBlob(blob, filename);
-            } else {
-                var e = document.createEvent('MouseEvents'),
-                    a = document.createElement('a');
-                a.download = filename
-                a.href = window.URL.createObjectURL(blob);
-                a.dataset.downloadurl = ['text/plain', a.download, a.href].join(':');
-                e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                a.dispatchEvent(e);
-            }
-        }
+        const input2 = document.querySelector("#input2")
+        input2.addEventListener("input", (event) => { document.getElementById("div").style.width = input2.value + "%" })
+        const input = document.querySelector("#input")
+        input.addEventListener("input", (event) => { document.getElementById("div").style.height = input.value + "%" })
     </script>
 </body>
 
