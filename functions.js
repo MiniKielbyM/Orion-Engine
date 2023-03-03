@@ -70,8 +70,8 @@ function confirmSizingHazards() {
         "hazard": {
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
-            "height": input2.value,
-            "width": input.value,
+            "height": document.getElementById(ConfirmElem).style.height,
+            "width": document.getElementById(ConfirmElem).style.width,
             "id": ConfirmElem
         }
     }
@@ -94,8 +94,8 @@ function confirmSizingWalls() {
         "wall": {
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
-            "height": input2.value,
-            "width": input.value,
+            "height": document.getElementById(ConfirmElem).style.height,
+            "width": document.getElementById(ConfirmElem).style.width,
             "id": ConfirmElem
         }
     }
@@ -114,7 +114,6 @@ function confirmPlacementNpc() {
 }
 
 function confirmNpcText() {
-    document.getElementById("npcText").value = "";
     console.log(document.getElementById("npcText").value);
     npcText = document.getElementById("npcText").value;
     obj[objCount] = {
@@ -128,6 +127,7 @@ function confirmNpcText() {
     objCount++;
     npcTextConfirmed = true;
     npcText = ""
+    document.getElementById("npcText").value = "";
     document.getElementById("npcTextArea").style.visibility = "hidden";
 }
 function confirmPlayer() {
@@ -189,8 +189,8 @@ function sizingDoor() {
 
 function confirmSizingDoor() {
     document.getElementById("sliders3").style.visibility = "hidden";
-    input.value = 1
-    input2.value = 1
+    document.querySelector("#inputD").value = 1
+    document.querySelector("#inputD2").value = 1
     confirmButton()
 }
 
@@ -247,15 +247,17 @@ function confirmPlacementBox() {
     obj[objCount] = {
         "UnlockDoor": {
             "doorId": doorId,
-            "doorX": document.getElementById(doorId).style.x,
-            "doorY": document.getElementById(doorId).style.y,
+            "doorX": document.getElementById(doorId).style.left,
+            "doorY": document.getElementById(doorId).style.top,
+            "doorHeight": document.getElementById(doorId).style.height,
+            "doorWidth": document.getElementById(doorId).style.width,
             "buttonId": buttonId,
-            "buttonX": document.getElementById(buttonId).style.x,
-            "buttonY": document.getElementById(buttonId).style.x,
+            "buttonX": document.getElementById(buttonId).style.left,
+            "buttonY": document.getElementById(buttonId).style.top,
             "buttonIdNum": doorElemId,
             "boxId": ConfirmElem,
-            "boxX": document.getElementById(ConfirmElem).style.x,
-            "boxY": document.getElementById(ConfirmElem).style.x
+            "boxX": document.getElementById(ConfirmElem).style.left,
+            "boxY": document.getElementById(ConfirmElem).style.top
         }
     }
     objCount++;
