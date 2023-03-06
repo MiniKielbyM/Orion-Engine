@@ -1,4 +1,4 @@
-#uploadButton {
+#buttonUpload {
     width: 100px;
     height: 50px;
     text-align: center;
@@ -12,6 +12,10 @@
     padding: 0%;
     margin: 0%;
     bottom: 50%;
+}
+
+#fileInput {
+    visibility: hidden;
 }
 
 #screenBorderTop {

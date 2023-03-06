@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
           console.log(result.length)
           arrLength = result.length
           console.log(result);
-          document.getElementById("fileInput").style.visibility = "hidden"
+          document.getElementById("buttonUpload").style.visibility = "hidden"
           loadObjects(result)
         });
         reader.readAsText(upload.files[0])
@@ -312,6 +312,7 @@ function loadObjects(result) {
       buttonFront.style.top = "5px"
       buttonFront.style.left = "5px"
       buttonFront.id = result[arrnum].UnlockDoor.buttonId
+      buttonFront.className += "button"
       buttonMid.appendChild(buttonFront)
       buttonBack.style.backgroundColor = "gray"
       buttonBack.style.width = "70px"
@@ -437,7 +438,8 @@ function loadObjects(result) {
       const boxTops = document.querySelectorAll(".topBox");
       const boxBottoms = document.querySelectorAll(".bottomBox");
       const boxs = document.querySelectorAll(".box");
-      var temp
+      const buttons = document.querySelectorAll(".button")
+      const doors = document.querySelectorAll(".door")
       console.log(hazardRights.length)
       document.onkeydown = function (event) {
         switch (event.key) {
@@ -486,7 +488,7 @@ function loadObjects(result) {
             checkNumCollide = 0;
             while (checkNumCollide < doorRights.length) {
               if (doorRights.length > 0) {
-                if (checkCollisionWithCondition(playerId, doorRights[checkNumCollide])) {
+                if (checkCollisionWithCondition(playerId, doorRights[checkNumCollide], doorRights[checkNumCollide].parentNode.style.backgroundColor, "aqua")) {
                   xAxis += moveSpeed
                   break;
                 }
@@ -499,6 +501,12 @@ function loadObjects(result) {
                 if (checkCollision(playerId, boxRights[checkNumCollide])) {
                   boxX[checkNumCollide] -= 10
                   boxs[checkNumCollide].style.left = boxX[checkNumCollide] + "px"
+                  if (checkCollision(boxRights[checkNumCollide].parentNode.id, buttons[checkNumCollide])) {
+                    doors[checkNumCollide].style.backgroundColor = "rgba(0, 255, 255, 0.408)"
+                  }
+                  else {
+                    doors[checkNumCollide].style.backgroundColor = "aqua"
+                  }
                 }
               }
               checkNumCollide++
@@ -552,7 +560,7 @@ function loadObjects(result) {
             checkNumCollide = 0;
             while (checkNumCollide < doorBottoms.length) {
               if (doorBottoms.length > 0) {
-                if (checkCollisionWithCondition(playerId, doorBottoms[checkNumCollide])) {
+                if (checkCollisionWithCondition(playerId, doorBottoms[checkNumCollide], doorRights[checkNumCollide].parentNode.style.backgroundColor, "aqua")) {
                   yAxis += moveSpeed
                   break;
                 }
@@ -565,6 +573,12 @@ function loadObjects(result) {
                 if (checkCollision(playerId, boxBottoms[checkNumCollide])) {
                   boxY[checkNumCollide] -= 10
                   boxs[checkNumCollide].style.top = boxY[checkNumCollide] + "px"
+                  if (checkCollision(boxRights[checkNumCollide].parentNode.id, buttons[checkNumCollide])) {
+                    doors[checkNumCollide].style.backgroundColor = "rgba(0, 255, 255, 0.408)"
+                  }
+                  else {
+                    doors[checkNumCollide].style.backgroundColor = "aqua"
+                  }
                 }
               }
               checkNumCollide++
@@ -618,7 +632,7 @@ function loadObjects(result) {
             checkNumCollide = 0;
             while (checkNumCollide < doorLefts.length) {
               if (doorLefts.length > 0) {
-                if (checkCollisionWithCondition(playerId, doorLefts[checkNumCollide])) {
+                if (checkCollisionWithCondition(playerId, doorLefts[checkNumCollide], doorRights[checkNumCollide].parentNode.style.backgroundColor, "aqua")) {
                   xAxis -= moveSpeed
                   break;
                 }
@@ -631,6 +645,12 @@ function loadObjects(result) {
                 if (checkCollision(playerId, boxLefts[checkNumCollide])) {
                   boxX[checkNumCollide] += 10
                   boxs[checkNumCollide].style.left = boxX[checkNumCollide] + "px"
+                  if (checkCollision(boxRights[checkNumCollide].parentNode.id, buttons[checkNumCollide])) {
+                    doors[checkNumCollide].style.backgroundColor = "rgba(0, 255, 255, 0.408)"
+                  }
+                  else {
+                    doors[checkNumCollide].style.backgroundColor = "aqua"
+                  }
                 }
               }
               checkNumCollide++
@@ -684,7 +704,7 @@ function loadObjects(result) {
             checkNumCollide = 0;
             while (checkNumCollide < doorTops.length) {
               if (doorTops.length > 0) {
-                if (checkCollisionWithCondition(playerId, doorTops[checkNumCollide])) {
+                if (checkCollisionWithCondition(playerId, doorTops[checkNumCollide]), doorLefts[checkNumCollide].parentNode.style.backgroundColor, "aqua") {
                   yAxis -= moveSpeed
                   break;
                 }
@@ -694,9 +714,15 @@ function loadObjects(result) {
             checkNumCollide = 0
             while (checkNumCollide < boxTops.length) {
               if (boxTops.length > 0) {
-                if (checkCollision(playerId, boxTops[checkNumCollide])) {
+                if (checkCollision(playerId, boxTops[checkNumCollide], doorRights[checkNumCollide].parentNode.style.backgroundColor, "aqua")) {
                   boxY[checkNumCollide] += 10
                   boxs[checkNumCollide].style.top = boxY[checkNumCollide] + "px"
+                  if (checkCollision(boxRights[checkNumCollide].parentNode.id, buttons[checkNumCollide])) {
+                    doors[checkNumCollide].style.backgroundColor = "rgba(0, 255, 255, 0.408)"
+                  }
+                  else {
+                    doors[checkNumCollide].style.backgroundColor = "aqua"
+                  }
                 }
               }
               checkNumCollide++
