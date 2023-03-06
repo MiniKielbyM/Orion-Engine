@@ -56,3 +56,7 @@ h1 {
     left: 5%;
     font-family: 'Chakra Petch', serif;
 }
+
+body {
+    overflow: hidden;
+}

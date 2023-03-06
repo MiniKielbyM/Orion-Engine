@@ -5,6 +5,7 @@ var elemIdNum = "0";
 var ConfirmElem = null;
 var npcText = "";
 var doorElemId = 0
+var playerPlaced = false
 var doorFull = true
 var doorId = "";
 var buttonId = "";
@@ -24,6 +25,7 @@ function confirmPlacementPlayer() {
             "id": ConfirmElem
         }
     }
+    playerPlaced = true
     objCount++;
 }
 function confirmPlacementWin() {
@@ -53,6 +55,7 @@ function confirmPlacementHazard() {
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
     elemSelectName = "blank"
     elemIdNum += "0";
+    doorFull = false
     sizingHazards();
 }
 
@@ -78,6 +81,7 @@ function confirmSizingHazards() {
     objCount++;
     inputH.value = 1;
     inputH2.value = 1;
+    doorFull = true
 }
 
 function sizingWalls() {
@@ -102,6 +106,7 @@ function confirmSizingWalls() {
     objCount++;
     input.value = 1;
     input2.value = 1;
+    doorFull = true
 }
 
 function confirmPlacementNpc() {
@@ -131,7 +136,7 @@ function confirmNpcText() {
     document.getElementById("npcTextArea").style.visibility = "hidden";
 }
 function confirmPlayer() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && playerPlaced == false && wallSizeConfirmed == true && doorFull == true) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#playerObjBase');
@@ -355,6 +360,7 @@ function confirmWall() {
         // Inject it into the DOM
         elem.before(clone);
         elemSelectName = "wallObj" + elemIdNum;
+        doorFull = false;
         addAllCssWall(elemSelectName)
         console.log(elemSelectName)
     }
