@@ -5,6 +5,7 @@ var elemIdNum = "0";
 var ConfirmElem = null;
 var npcText = "";
 var doorElemId = 0
+var playerPlaced = false
 var doorFull = true
 var doorId = "";
 var buttonId = "";
@@ -24,6 +25,7 @@ function confirmPlacementPlayer() {
             "id": ConfirmElem
         }
     }
+    playerPlaced = true
     objCount++;
 }
 function confirmPlacementWin() {
@@ -53,6 +55,7 @@ function confirmPlacementHazard() {
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
     elemSelectName = "blank"
     elemIdNum += "0";
+    doorFull = false
     sizingHazards();
 }
 
@@ -70,14 +73,15 @@ function confirmSizingHazards() {
         "hazard": {
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
-            "height": input2.value,
-            "width": input.value,
+            "height": document.getElementById(ConfirmElem).style.height,
+            "width": document.getElementById(ConfirmElem).style.width,
             "id": ConfirmElem
         }
     }
     objCount++;
     inputH.value = 1;
     inputH2.value = 1;
+    doorFull = true
 }
 
 function sizingWalls() {
@@ -94,14 +98,15 @@ function confirmSizingWalls() {
         "wall": {
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
-            "height": input2.value,
-            "width": input.value,
+            "height": document.getElementById(ConfirmElem).style.height,
+            "width": document.getElementById(ConfirmElem).style.width,
             "id": ConfirmElem
         }
     }
     objCount++;
     input.value = 1;
     input2.value = 1;
+    doorFull = true
 }
 
 function confirmPlacementNpc() {
@@ -114,7 +119,6 @@ function confirmPlacementNpc() {
 }
 
 function confirmNpcText() {
-    document.getElementById("npcText").value = "";
     console.log(document.getElementById("npcText").value);
     npcText = document.getElementById("npcText").value;
     obj[objCount] = {
@@ -128,10 +132,11 @@ function confirmNpcText() {
     objCount++;
     npcTextConfirmed = true;
     npcText = ""
+    document.getElementById("npcText").value = "";
     document.getElementById("npcTextArea").style.visibility = "hidden";
 }
 function confirmPlayer() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && playerPlaced == false && wallSizeConfirmed == true && doorFull == true) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#playerObjBase');
@@ -189,8 +194,8 @@ function sizingDoor() {
 
 function confirmSizingDoor() {
     document.getElementById("sliders3").style.visibility = "hidden";
-    input.value = 1
-    input2.value = 1
+    document.querySelector("#inputD").value = 1
+    document.querySelector("#inputD2").value = 1
     confirmButton()
 }
 
@@ -247,15 +252,17 @@ function confirmPlacementBox() {
     obj[objCount] = {
         "UnlockDoor": {
             "doorId": doorId,
-            "doorX": document.getElementById(doorId).style.x,
-            "doorY": document.getElementById(doorId).style.y,
+            "doorX": document.getElementById(doorId).style.left,
+            "doorY": document.getElementById(doorId).style.top,
+            "doorHeight": document.getElementById(doorId).style.height,
+            "doorWidth": document.getElementById(doorId).style.width,
             "buttonId": buttonId,
-            "buttonX": document.getElementById(buttonId).style.x,
-            "buttonY": document.getElementById(buttonId).style.x,
+            "buttonX": document.getElementById(buttonId).style.left,
+            "buttonY": document.getElementById(buttonId).style.top,
             "buttonIdNum": doorElemId,
             "boxId": ConfirmElem,
-            "boxX": document.getElementById(ConfirmElem).style.x,
-            "boxY": document.getElementById(ConfirmElem).style.x
+            "boxX": document.getElementById(ConfirmElem).style.left,
+            "boxY": document.getElementById(ConfirmElem).style.top
         }
     }
     objCount++;
@@ -353,6 +360,7 @@ function confirmWall() {
         // Inject it into the DOM
         elem.before(clone);
         elemSelectName = "wallObj" + elemIdNum;
+        doorFull = false;
         addAllCssWall(elemSelectName)
         console.log(elemSelectName)
     }

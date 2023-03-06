@@ -54,7 +54,7 @@
   <div id="screenBorderBottom"></div>
   <div id="screenBorderRight"></div>
   <script type="text/javascript">
-    (function () {
+     (function () {
       //assorted functions code begin
       function collide(div1ID, div2ID) {
         const domRect1 = document.getElementById(div1ID).getBoundingClientRect();
@@ -108,6 +108,7 @@
         }
         else if (!eval(document.getElementById("unlockableDoor").getAttribute('data-unlockConditions')) === true) {
           doorOpen = false;
+          
         }
         switch (event.key) {
           case 'ArrowLeft':
