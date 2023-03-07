@@ -704,7 +704,7 @@ function loadObjects(result) {
             checkNumCollide = 0;
             while (checkNumCollide < doorTops.length) {
               if (doorTops.length > 0) {
-                if (checkCollisionWithCondition(playerId, doorTops[checkNumCollide]), doorLefts[checkNumCollide].parentNode.style.backgroundColor, "aqua") {
+                if (checkCollisionWithCondition(playerId, doorTops[checkNumCollide], doorTops[checkNumCollide].parentNode.style.backgroundColor, "aqua")) {
                   yAxis -= moveSpeed
                   break;
                 }
@@ -714,10 +714,10 @@ function loadObjects(result) {
             checkNumCollide = 0
             while (checkNumCollide < boxTops.length) {
               if (boxTops.length > 0) {
-                if (checkCollision(playerId, boxTops[checkNumCollide], doorRights[checkNumCollide].parentNode.style.backgroundColor, "aqua")) {
+                if (checkCollision(playerId, boxTops[checkNumCollide])) {
                   boxY[checkNumCollide] += 10
                   boxs[checkNumCollide].style.top = boxY[checkNumCollide] + "px"
-                  if (checkCollision(boxRights[checkNumCollide].parentNode.id, buttons[checkNumCollide])) {
+                  if (checkCollision(boxTops[checkNumCollide].parentNode.id, buttons[checkNumCollide])) {
                     doors[checkNumCollide].style.backgroundColor = "rgba(0, 255, 255, 0.408)"
                   }
                   else {
@@ -727,11 +727,9 @@ function loadObjects(result) {
               }
               checkNumCollide++
             }
-            if (!checkBoolWall == true) {
-              yAxis += moveSpeed;
-              div.style.top = yAxis + 'px';
-              checkNumCollide = 0;
-            }
+            yAxis += moveSpeed;
+            div.style.top = yAxis + 'px';
+            checkNumCollide = 0;
             break;
         }
 
