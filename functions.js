@@ -12,7 +12,10 @@ var buttonId = "";
 var wallSizeConfirmed = true;
 var npcTextConfirmed = true;
 var Bclone
+var fakeOn = false;
 var sidebarOpen = true;
+var bluePortalId;
+var ColorPickerOpen = false
 function confirmPlacementPlayer() {
     ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
@@ -48,6 +51,22 @@ function confirmPlacementWall() {
     elemSelectName = "blank"
     elemIdNum += "0";
     sizingWalls();
+}
+
+function confirmPlacementRep() {
+    ConfirmElem = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    elemIdNum += "0";
+    sizingReps();
+}
+
+function confirmPlacementRepulse() {
+    ConfirmElem = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    elemIdNum += "0";
+    sizingRepulse();
 }
 
 function confirmPlacementHazard() {
@@ -109,6 +128,31 @@ function confirmSizingWalls() {
     doorFull = true
 }
 
+function sizingReps() {
+    document.getElementById("sliders4").style.visibility = "visible";
+    const input = document.querySelector("#inputR")
+    input.addEventListener("input", (event) => { document.getElementById(ConfirmElem).style.width = input.value + "%" })
+    const input2 = document.querySelector("#inputR2")
+    input2.addEventListener("input", (event) => { document.getElementById(ConfirmElem).style.height = input2.value + "%" })
+}
+
+function confirmSizingReps() {
+    document.getElementById("sliders4").style.visibility = "hidden";
+    obj[objCount] = {
+        "rep": {
+            "x": document.getElementById(ConfirmElem).style.left,
+            "y": document.getElementById(ConfirmElem).style.top,
+            "height": document.getElementById(ConfirmElem).style.height,
+            "width": document.getElementById(ConfirmElem).style.width,
+            "id": ConfirmElem
+        }
+    }
+    objCount++;
+    input.value = 1;
+    input2.value = 1;
+    doorFull = true
+}
+
 function confirmPlacementNpc() {
     ConfirmElem = elemSelectName;
     document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
@@ -136,7 +180,7 @@ function confirmNpcText() {
     document.getElementById("npcTextArea").style.visibility = "hidden";
 }
 function confirmPlayer() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && playerPlaced == false && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && playerPlaced == false && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#playerObjBase');
@@ -156,7 +200,7 @@ function confirmPlayer() {
 }
 
 function confirmDoor() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
         doorFull = false;
         console.log("press confirmed")
         // Get the element
@@ -288,7 +332,7 @@ function addAllCssBox(boxID) {
 }
 
 function confirmNpc() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#npcObjBase');
@@ -308,7 +352,7 @@ function confirmNpc() {
 }
 
 function confirmWin() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#winObjBase');
@@ -326,8 +370,87 @@ function confirmWin() {
     }
 }
 
+function confirmPortal1() {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#portalObjBase');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'portalObj' + elemIdNum;
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "portalObj" + elemIdNum;
+        addAllCssPortal1(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
+
+function addAllCssPortal1(portalId) {
+    document.getElementById(portalId).style.position = "absolute"
+    document.getElementById(portalId).style.backgroundColor = "darkBlue"
+    document.getElementById(portalId).style.width = "10px"
+    document.getElementById(portalId).style.height = "60px"
+    document.getElementById(portalId).firstChild.id = "clientConfirm"
+}
+
+function confirmPlacementPortal1() {
+    ConfirmElem = elemSelectName;
+    portalId = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    confirmPortal2();
+}
+
+function confirmPortal2() {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#portalObjBase2');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'portalObj2' + elemIdNum;
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "portalObj2" + elemIdNum;
+        addAllCssPortal2(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
+
+function addAllCssPortal2(portalId) {
+    document.getElementById(portalId).style.position = "absolute"
+    document.getElementById(portalId).style.backgroundColor = "orangered"
+    document.getElementById(portalId).style.width = "10px"
+    document.getElementById(portalId).style.height = "60px"
+    document.getElementById(portalId).firstChild.id = "clientConfirm"
+}
+
+function confirmPlacementPortal2() {
+    ConfirmElem = elemSelectName;
+    document.getElementById(elemSelectName).removeChild(document.getElementById(elemSelectName).firstElementChild);
+    elemSelectName = "blank"
+    obj[objCount] = {
+        "portal": {
+            "x1": document.getElementById(portalId).style.left,
+            "y1": document.getElementById(portalId).style.top,
+            "id1": portalId,
+            "x2": document.getElementById(ConfirmElem).style.left,
+            "y2": document.getElementById(ConfirmElem).style.top,
+            "id2": ConfirmElem
+        }
+    }
+    objCount++;
+}
+
 function confirmHazard() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#hazardObjBase');
@@ -346,7 +469,7 @@ function confirmHazard() {
 }
 
 function confirmWall() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
         console.log("press confirmed")
         // Get the element
         var elem = document.querySelector('#wallObjBase');
@@ -362,6 +485,27 @@ function confirmWall() {
         elemSelectName = "wallObj" + elemIdNum;
         doorFull = false;
         addAllCssWall(elemSelectName)
+        console.log(elemSelectName)
+    }
+}
+
+function confirmRepulse() {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
+        console.log("press confirmed")
+        // Get the element
+        var elem = document.querySelector('#repObjBase');
+
+        // Create a copy of it
+        var clone = elem.cloneNode(true);
+
+        // Update the ID and add a class
+        clone.id = 'repulseObj' + elemIdNum;
+
+        // Inject it into the DOM
+        elem.before(clone);
+        elemSelectName = "repulseObj" + elemIdNum;
+        doorFull = false;
+        addAllCssRepulse(elemSelectName)
         console.log(elemSelectName)
     }
 }
@@ -410,6 +554,14 @@ function addAllCssWall(WallId) {
     document.getElementById(WallId).firstChild.id = "clientConfirm"
 }
 
+function addAllCssRepulse(RepId) {
+    document.getElementById(RepId).style.width = "50px";
+    document.getElementById(RepId).style.height = "50px";
+    document.getElementById(RepId).style.backgroundColor = "rgb(219, 0, 128)";
+    document.getElementById(RepId).style.position = "absolute";
+    document.getElementById(RepId).firstChild.id = "clientConfirm"
+}
+
 function addAllCssHazard(HazardId) {
     document.getElementById(HazardId).style.width = "50px";
     document.getElementById(HazardId).style.height = "50px";
@@ -427,7 +579,12 @@ function addAllCssDoor(DoorId) {
 }
 
 function downloadFile() {
-    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true) {
+    if (elemSelectName == "blank" && npcTextConfirmed == true && wallSizeConfirmed == true && doorFull == true && ColorPickerOpen == false) {
+        obj[objCount++] = {
+            "bgColor": {
+                "color": document.getElementById("color").value
+            }
+        }
         var filename = "Assets.json";
         var blob = new Blob([JSON.stringify(obj)], { type: 'text/plain' });
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
@@ -441,6 +598,7 @@ function downloadFile() {
             e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
             a.dispatchEvent(e);
         }
+        obj[objCount++] = null
     }
 }
 
@@ -459,8 +617,41 @@ function hideSidebar() {
     }
 }
 
-document.addEventListener("keypress", function (event) {
-    if (event.keyCode == 13) {
-        hideSidebar()
+window.addEventListener('keydown', function (e) {
+    if (`${e.key}` == "Enter") {
+        hideSidebar();
     }
+    if (`${e.key}` == "ArrowLeft") {
+        fakeOn = false
+        console.log(fakeOn)
+    }
+    if (`${e.key}` == "ArrowRight") {
+        fakeOn = true
+        console.log(fakeOn)
+    }
+    if (`${e.key}` == "b") {
+        if (ColorPickerOpen == false) {
+            document.getElementById("colorPicker").style.visibility = "visible"
+            ColorPickerOpen = true
+        }
+    }
+}, false);
+
+function confirmBG() {
+    document.getElementById("colorPicker").style.visibility = "hidden"
+    ColorPickerOpen = false;
+    document.body.style.backgroundColor = document.getElementById("color").value
+}
+
+$('.notify').on('click',function() {
+    $(this).slideUp('fast',function(){$(this).remove();});
 });
+
+$(function(){
+    notify('You have earned the JQuery badge!');
+    notify('You have earned the Super Awesome badge!');
+});
+
+function notify(msg) {
+    $('<div/>').prependTo('body').addClass('notify').html(msg).slideDown();
+}

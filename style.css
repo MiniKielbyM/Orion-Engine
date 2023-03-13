@@ -115,6 +115,10 @@ p {
     overflow: hidden;
 }
 
+
+
+
+
 #npcImg {
     width: 50px;
     height: 50px;
@@ -153,6 +157,25 @@ p {
     background-color: blue;
 }
 
+#repulseImg {
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background-color: rgb(219, 0, 128);
+}
+
+#repulseButton {
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    width: 50px;
+    height: 50px;
+    border-color: rgba(43, 43, 43, 0);
+    background-color: rgba(43, 43, 43, 0);
+}
+
 #hazardImg {
     width: 50px;
     height: 50px;
@@ -165,6 +188,18 @@ p {
 #hazardName {
     font-size: 14px;
     text-align: center;
+}
+
+#portalName {
+    text-align: center;
+    position: absolute;
+    left: 2.5px;
+}
+
+#repulseName {
+    font-size: 10px;
+    text-align: center;
+    top: 13%;
 }
 
 #playerObj {
@@ -312,6 +347,20 @@ p {
     top: 10px;
 }
 
+#RepulseSizeButton {
+    width: 59px;
+    height: 25px;
+    text-align: center;
+    background-color: rgb(29, 116, 29);
+    border-radius: 25px;
+    color: white;
+    border-width: 3px;
+    border-color: green;
+    position: absolute;
+    left: 35%;
+    top: 10px;
+}
+
 #sliders2 {
     visibility: hidden;
 }
@@ -334,6 +383,28 @@ p {
     position: absolute;
 }
 
+#sliders4 {
+    visibility: hidden;
+}
+
+#inputR2 {
+    appearance: slider-vertical;
+    height: 90%;
+    bottom: 5%;
+    left: 0px;
+    transform: rotate(180deg);
+    padding: 0%;
+    position: absolute;
+}
+
+#inputR {
+    width: 90%;
+    bottom: 10px;
+    left: 5%;
+    padding: 0%;
+    position: absolute;
+}
+
 #buttonObjBase {
     visibility: hidden;
 }
@@ -349,6 +420,36 @@ p {
 
 #sliders3 {
     visibility: hidden;
+}
+
+#portalButton {
+    position: absolute;
+    top: 55%;
+    right: 30%;
+    width: 50px;
+    height: 50px;
+    border-color: rgba(43, 43, 43, 0);
+    background-color: rgba(43, 43, 43, 0);
+}
+
+#portalImg {
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: hidden;
+    background-color: orangered;
+    overflow: hidden;
+}
+
+#portalLeft {
+    width: 25px;
+    height: 100%;
+    position: relative;
+    left: 0%;
+    top: 0px;
+    background-color: darkblue
 }
 
 #inputD2 {
@@ -423,3 +524,26 @@ p {
     margin: 0%;
     bottom: 160px;
 }
+
+#colorPicker {
+    visibility: hidden;
+}
+
+#color {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 40%;   
+    top: 10px;
+}
+
+.notify {
+    position:relative;
+    width:100%;
+    background-color:orange;
+    height:50px;
+    color:white;
+    display:none;
+}
+
+

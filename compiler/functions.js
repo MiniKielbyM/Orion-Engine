@@ -74,6 +74,9 @@ function loadObjects(result) {
       document.body.insertBefore(newDiv, document.getElementById("blank"));
       console.log(result);
     }
+    else if (arr[0] == '{"bgColor"') {
+      document.body.style.backgroundColor = result[arrnum].bgColor.color;
+    }
     else if (arr[0] == '{"npc"') {
       console.log("2")
       const newDiv = document.createElement("div");
@@ -244,6 +247,82 @@ function loadObjects(result) {
       newDiv.style.top = result[arrnum].hazard.y
       newDiv.style.left = result[arrnum].hazard.x
       newDiv.style.backgroundColor = "rgb(255, 111, 0)";
+      document.body.insertBefore(newDiv, document.getElementById("blank"));
+      console.log(result);
+    }
+
+    else if (arr[0] == '{"portal"') {
+      console.log("1")
+      const newDiv = document.createElement("div");
+      const newDiv2 = document.createElement("div");
+      newDiv.className += "portal1";
+      newDiv.style.width = "10px";
+      newDiv.style.height = "60px"
+      newDiv.id = result[arrnum].portal.id1
+      newDiv.style.position = "absolute"
+      newDiv.style.top = result[arrnum].portal.y1
+      newDiv.style.left = result[arrnum].portal.x1
+      newDiv.style.backgroundColor = "darkblue";
+      document.body.insertBefore(newDiv, document.getElementById("blank"));
+      newDiv2.className += "portal2";
+      newDiv2.style.width = "10px";
+      newDiv2.style.height = "60px"
+      newDiv2.id = result[arrnum].portal.id2
+      newDiv2.style.position = "absolute"
+      newDiv2.style.top = result[arrnum].portal.y2
+      newDiv2.style.left = result[arrnum].portal.x2
+      newDiv2.style.backgroundColor = "orangered";
+      document.body.insertBefore(newDiv2, document.getElementById("blank"));
+      console.log(result);
+    }
+
+    else if (arr[0] == '{"rep"') {
+      console.log("1")
+      const newDiv = document.createElement("div");
+      newDiv.className += "rep";
+      const newTop = document.createElement("div");
+      const newLeft = document.createElement("div");
+      const newBottom = document.createElement("div");
+      const newRight = document.createElement("div");
+      newTop.className = "topRep"
+      newLeft.className = "leftRep"
+      newBottom.className = "bottomRep"
+      newRight.className = "rightRep"
+      newTop.style.width = "100%";
+      newRight.style.height = "100%";
+      newLeft.style.height = "100%";
+      newBottom.style.width = "100%";
+      newTop.style.height = "10px";
+      newRight.style.width = "10px";
+      newLeft.style.width = "10px";
+      newBottom.style.height = "10px";
+      newTop.style.position = "absolute";
+      newRight.style.position = "absolute";
+      newLeft.style.position = "absolute";
+      newBottom.style.position = "absolute";
+      newTop.style.right = "0px"
+      newRight.style.top = "0px"
+      newLeft.style.top = "0px"
+      newBottom.style.right = "0px"
+      newTop.style.top = "-5px"
+      newRight.style.right = "-5px"
+      newLeft.style.left = "-5px"
+      newBottom.style.bottom = "-5px"
+      newTop.style.backgroundColor = "rgba(255, 255, 0, 0)"
+      newRight.style.backgroundColor = "rgba(255, 255, 0, 0)"
+      newLeft.style.backgroundColor = "rgba(255, 255, 0, 0)"
+      newBottom.style.backgroundColor = "rgba(255, 255, 0, 0)"
+      newDiv.appendChild(newBottom);
+      newDiv.appendChild(newLeft);
+      newDiv.appendChild(newRight);
+      newDiv.appendChild(newTop);
+      newDiv.style.width = result[arrnum].rep.width;
+      newDiv.style.height = result[arrnum].rep.height;
+      newDiv.id = result[arrnum].rep.id
+      newDiv.style.position = "absolute"
+      newDiv.style.top = result[arrnum].rep.y
+      newDiv.style.left = result[arrnum].rep.x
+      newDiv.style.backgroundColor = "rgb(219, 0, 128)";
       document.body.insertBefore(newDiv, document.getElementById("blank"));
       console.log(result);
     }
@@ -433,6 +512,10 @@ function loadObjects(result) {
       const doorLefts = document.querySelectorAll(".leftDoor");
       const doorTops = document.querySelectorAll(".topDoor");
       const doorBottoms = document.querySelectorAll(".bottomDoor");
+      const repRights = document.querySelectorAll(".rightRep");
+      const repLefts = document.querySelectorAll(".leftRep");
+      const repTops = document.querySelectorAll(".topRep");
+      const repBottoms = document.querySelectorAll(".bottomRep");
       const boxRights = document.querySelectorAll(".rightBox");
       const boxLefts = document.querySelectorAll(".leftBox");
       const boxTops = document.querySelectorAll(".topBox");
@@ -440,6 +523,9 @@ function loadObjects(result) {
       const boxs = document.querySelectorAll(".box");
       const buttons = document.querySelectorAll(".button")
       const doors = document.querySelectorAll(".door")
+      const bluePortals = document.querySelectorAll(".portal1")
+      const orangePortals = document.querySelectorAll(".portal2")
+      var collidedPortal = false
       console.log(hazardRights.length)
       document.onkeydown = function (event) {
         switch (event.key) {
@@ -449,6 +535,16 @@ function loadObjects(result) {
               if (wallRights.length > 0) {
                 if (checkCollision(playerId, wallRights[checkNumCollide]) == true) {
                   xAxis += moveSpeed;
+                  break;
+                }
+                checkNumCollide++
+              }
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < repRights.length) {
+              if (repRights.length > 0) {
+                if (checkCollision(playerId, repRights[checkNumCollide]) == true) {
+                  xAxis += moveSpeed * 10;
                   break;
                 }
                 checkNumCollide++
@@ -511,6 +607,35 @@ function loadObjects(result) {
               }
               checkNumCollide++
             }
+            collidedPortal = false
+            checkNumCollide = 0
+            while (checkNumCollide < orangePortals.length) {
+              if (orangePortals.length > 0 && collidedPortal == false) {
+                if (checkCollision(playerId, orangePortals[checkNumCollide])) {
+                  xAxis = parseInt(bluePortals[checkNumCollide].style.left) + -50
+                  yAxis = parseInt(bluePortals[checkNumCollide].style.top)
+                  div.style.left = xAxis + "px";
+                  div.style.top = yAxis + "px";
+                  collidedPortal = true
+                  break;
+                }
+              }
+              checkNumCollide++
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < bluePortals.length) {
+              if (bluePortals.length > 0 && collidedPortal == false) {
+                if (checkCollision(playerId, bluePortals[checkNumCollide])) {
+                  xAxis = parseInt(orangePortals[checkNumCollide].style.left) + -50
+                  yAxis = parseInt(orangePortals[checkNumCollide].style.top)
+                  div.style.left = xAxis + "px";
+                  div.style.top = yAxis + "px";
+                  collidedPortal == true
+                  break;
+                }
+              }
+              checkNumCollide++
+            }
             if (!checkBoolWall == true) {
               xAxis -= moveSpeed;
               div.style.left = xAxis + 'px';
@@ -557,6 +682,16 @@ function loadObjects(result) {
               }
               checkNumCollide++
             }
+            checkNumCollide = 0
+            while (checkNumCollide < repBottoms.length) {
+              if (repBottoms.length > 0) {
+                if (checkCollision(playerId, repBottoms[checkNumCollide]) == true) {
+                  yAxis += moveSpeed * 10;
+                  break;
+                }
+                checkNumCollide++
+              }
+            }
             checkNumCollide = 0;
             while (checkNumCollide < doorBottoms.length) {
               if (doorBottoms.length > 0) {
@@ -599,6 +734,16 @@ function loadObjects(result) {
                 }
               }
               checkNumCollide++
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < repLefts.length) {
+              if (repLefts.length > 0) {
+                if (checkCollision(playerId, repLefts[checkNumCollide]) == true) {
+                  xAxis -= moveSpeed * 10;
+                  break;
+                }
+                checkNumCollide++
+              }
             }
             checkNumCollide = 0
             while (checkNumCollide < hazardLefts.length) {
@@ -655,6 +800,35 @@ function loadObjects(result) {
               }
               checkNumCollide++
             }
+            collidedPortal = false
+            checkNumCollide = 0
+            while (checkNumCollide < orangePortals.length) {
+              if (orangePortals.length > 0 && collidedPortal == false) {
+                if (checkCollision(playerId, orangePortals[checkNumCollide])) {
+                  xAxis = parseInt(bluePortals[checkNumCollide].style.left) + 10
+                  yAxis = parseInt(bluePortals[checkNumCollide].style.top)
+                  div.style.left = xAxis + "px";
+                  div.style.top = yAxis + "px";
+                  collidedPortal = true
+                  break;
+                }
+              }
+              checkNumCollide++
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < bluePortals.length) {
+              if (bluePortals.length > 0 && collidedPortal == false) {
+                if (checkCollision(playerId, bluePortals[checkNumCollide])) {
+                  xAxis = parseInt(orangePortals[checkNumCollide].style.left) + 10
+                  yAxis = parseInt(orangePortals[checkNumCollide].style.top)
+                  div.style.left = xAxis + "px";
+                  div.style.top = yAxis + "px";
+                  collidedPortal == true
+                  break;
+                }
+              }
+              checkNumCollide++
+            }
             if (!checkBoolWall == true) {
               xAxis += moveSpeed;
               div.style.left = xAxis + 'px';
@@ -667,6 +841,16 @@ function loadObjects(result) {
               if (wallTops.length > 0) {
                 if (checkCollision(playerId, wallTops[checkNumCollide]) == true) {
                   yAxis -= moveSpeed;
+                  break;
+                }
+                checkNumCollide++
+              }
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < repTops.length) {
+              if (repTops.length > 0) {
+                if (checkCollision(playerId, repTops[checkNumCollide]) == true) {
+                  yAxis -= moveSpeed * 10;
                   break;
                 }
                 checkNumCollide++
