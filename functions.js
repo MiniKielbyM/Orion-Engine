@@ -23,6 +23,7 @@ function confirmPlacementPlayer() {
     elemIdNum += "0";
     obj[objCount] = {
         "player": {
+            "hasHitbox": !fakeOn,
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
             "id": ConfirmElem
@@ -38,6 +39,7 @@ function confirmPlacementWin() {
     elemIdNum += "0";
     obj[objCount] = {
         "win": {
+            "hasHitbox": !fakeOn,
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
             "id": ConfirmElem
@@ -90,6 +92,7 @@ function confirmSizingHazards() {
     document.getElementById("sliders2").style.visibility = "hidden";
     obj[objCount] = {
         "hazard": {
+            "hasHitbox": !fakeOn,
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
             "height": document.getElementById(ConfirmElem).style.height,
@@ -115,6 +118,7 @@ function confirmSizingWalls() {
     document.getElementById("sliders").style.visibility = "hidden";
     obj[objCount] = {
         "wall": {
+            "hasHitbox": !fakeOn,
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
             "height": document.getElementById(ConfirmElem).style.height,
@@ -140,6 +144,7 @@ function confirmSizingReps() {
     document.getElementById("sliders4").style.visibility = "hidden";
     obj[objCount] = {
         "rep": {
+            "hasHitbox": !fakeOn,
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
             "height": document.getElementById(ConfirmElem).style.height,
@@ -167,6 +172,7 @@ function confirmNpcText() {
     npcText = document.getElementById("npcText").value;
     obj[objCount] = {
         "npc": {
+            "hasHitbox": !fakeOn,
             "x": document.getElementById(ConfirmElem).style.left,
             "y": document.getElementById(ConfirmElem).style.top,
             "id": ConfirmElem,
@@ -295,6 +301,7 @@ function confirmPlacementBox() {
     elemSelectName = "blank"
     obj[objCount] = {
         "UnlockDoor": {
+            "hasHitbox": !fakeOn,
             "doorId": doorId,
             "doorX": document.getElementById(doorId).style.left,
             "doorY": document.getElementById(doorId).style.top,
@@ -385,7 +392,7 @@ function confirmPortal1() {
         elem.before(clone);
         elemSelectName = "portalObj" + elemIdNum;
         addAllCssPortal1(elemSelectName)
-        console.log(elemSelectName)
+        console.log(elemSelectNa/me)
     }
 }
 
@@ -438,6 +445,7 @@ function confirmPlacementPortal2() {
     elemSelectName = "blank"
     obj[objCount] = {
         "portal": {
+            "hasHitbox": !fakeOn,
             "x1": document.getElementById(portalId).style.left,
             "y1": document.getElementById(portalId).style.top,
             "id1": portalId,
@@ -624,10 +632,12 @@ window.addEventListener('keydown', function (e) {
     if (`${e.key}` == "ArrowLeft") {
         fakeOn = false
         console.log(fakeOn)
+        document.getElementById("fakeName").innerText = "Real"
     }
     if (`${e.key}` == "ArrowRight") {
         fakeOn = true
         console.log(fakeOn)
+        document.getElementById("fakeName").innerText = "Fake"
     }
     if (`${e.key}` == "b") {
         if (ColorPickerOpen == false) {
@@ -641,17 +651,4 @@ function confirmBG() {
     document.getElementById("colorPicker").style.visibility = "hidden"
     ColorPickerOpen = false;
     document.body.style.backgroundColor = document.getElementById("color").value
-}
-
-$('.notify').on('click',function() {
-    $(this).slideUp('fast',function(){$(this).remove();});
-});
-
-$(function(){
-    notify('You have earned the JQuery badge!');
-    notify('You have earned the Super Awesome badge!');
-});
-
-function notify(msg) {
-    $('<div/>').prependTo('body').addClass('notify').html(msg).slideDown();
 }

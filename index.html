@@ -13,7 +13,6 @@
 </head>
 
 <body>
-  <div class="notify"></div>
   <div id="blank"></div>
   <div id="doorObjBase"><button id="confirm" onclick="confirmPlacementDoor()">Confirm</button></div>
   <div id="buttonObjBase">
@@ -38,32 +37,32 @@
     <div id="wallSelect">
       <button id="wallButton" onclick="confirmWall()">
         <div id="wallImg">
-          <p id="wallName">wall</p>
+          <p class="name" id="wallName">wall</p>
         </div>
       </button>
     </div>
     <div id="winSelect">
       <button id="winButton" onclick="confirmWin()">
         <div id="winImg">
-          <p id="winName">win</p>
+          <p class="name" id="winName">win</p>
         </div>
       </button>
     </div>
     <div id="playerSelect"><button onclick="confirmPlayer()" id="playerButton">
         <div id="playerImg">
-          <p id="playerName">player</p>
+          <p class="name" id="playerName">player</p>
         </div>
       </button>
     </div>
     <div id="npcSelect"><button onclick="confirmNpc()" id="npcButton">
         <div id="npcImg">
-          <p id="npcName">NPC</p>
+          <p class="name" id="npcName">NPC</p>
         </div>
       </button>
     </div>
     <div id="hazardSelect"><button onclick="confirmHazard()" id="hazardButton">
         <div id="hazardImg">
-          <p id="hazardName">hazard</p>
+          <p class="name" id="hazardName">hazard</p>
         </div>
       </button>
     </div>
@@ -73,25 +72,27 @@
           <div id="portalLeft">
           </div>
         </div>
-        <p id="portalName">portal</p>
+        <p class="name" id="portalName">portal</p>
       </button>
     </div>
     <div id="doorSelect"><button onclick="confirmDoor()" id="doorButton">
         <div id="doorImg">
-          <p id="doorName">door</p>
+          <p class="name" id="doorName">door</p>
         </div>
       </button>
     </div>
 
     <div id="repulseSelect"><button onclick="confirmRepulse()" id="repulseButton">
         <div id="repulseImg">
-          <p id="repulseName">repulsion</p>
+          <p class="name" id="repulseName">repulsion</p>
         </div>
       </button>
     </div>
     <input type="button" onclick="downloadFile();" value="Download" id="Download">
     <button onclick="window.location.replace('/compiler')" id="compiler">play</button>
-    <p id="test"></p>
+    <div id="heIIo">
+      <p id="fakeName">Real</p>
+    </div>
   </div>
   </div>
   <div id="npcTextArea">
@@ -118,7 +119,7 @@
     <input type="range" min="1" max="100" value="1" step="1" id="inputR">
     <input type="range" min="1" max="100" value="1" step="1" id="inputR2">
   </div>
-  <div id="colorPicker"> 
+  <div id="colorPicker">
     <input type="color" id="color" value="#FFFFFF">
     <button id="DoorSizeButton" onclick="confirmBG()">confirm</button>
   </div>

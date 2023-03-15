@@ -46,7 +46,9 @@ function loadObjects(result) {
     if (arr[0] == '{"player"') {
       console.log("1")
       const newDiv = document.createElement("div");
-      newDiv.className += "player";
+      if (result[arrnum].player.hasHitbox == true) {
+        newDiv.className += "player";
+      }
       newDiv.style.width = "50px";
       newDiv.style.height = "50px";
       playerNum = arrnum;
@@ -63,7 +65,9 @@ function loadObjects(result) {
     else if (arr[0] == '{"win"') {
       console.log("2")
       const newDiv = document.createElement("div");
-      newDiv.className += "win";
+      if (result[arrnum].win.hasHitbox == true) {
+        newDiv.className += "win";
+      }
       newDiv.style.width = "100px";
       newDiv.style.height = "100px";
       newDiv.id = result[arrnum].win.id
@@ -86,10 +90,12 @@ function loadObjects(result) {
       const newLeft = document.createElement("div");
       const newBottom = document.createElement("div");
       const newRight = document.createElement("div");
-      newTop.className = "topNpc"
-      newLeft.className = "leftNpc"
-      newBottom.className = "bottomNpc"
-      newRight.className = "rightNpc"
+      if (result[arrnum].npc.hasHitbox == true) {
+        newTop.className = "topNpc"
+        newLeft.className = "leftNpc"
+        newBottom.className = "bottomNpc"
+        newRight.className = "rightNpc"
+      }
       newTop.style.width = "100%";
       newRight.style.height = "100%";
       newLeft.style.height = "100%";
@@ -118,7 +124,9 @@ function loadObjects(result) {
       newDiv.appendChild(newLeft);
       newDiv.appendChild(newRight);
       newDiv.appendChild(newTop);
-      newText.className += "npcTextBox";
+      if (result[arrnum].npc.hasHitbox == true) {
+        newText.className += "npcTextBox";
+      }
       var newTextArr = new Array;
       let resNum = new String;
       resNum = JSON.stringify(result[arrnum].npc.id);
@@ -136,7 +144,9 @@ function loadObjects(result) {
       newText.style.borderColor = "red"
       newTextP.innerText = result[arrnum].npc.text;
       newTextP.id = "npcText" + newTextArr[1]
-      newTextP.className += "npcText"
+      if (result[arrnum].npc.hasHitbox == true) {
+        newTextP.className += "npcText"
+      }
       newText.appendChild(newTextP)
       newDiv.style.width = "50px";
       newDiv.style.height = "50px";
@@ -145,7 +155,9 @@ function loadObjects(result) {
       newDiv.style.top = result[arrnum].npc.y
       newDiv.style.left = result[arrnum].npc.x
       newDiv.style.backgroundColor = "darkred";
-      newDiv.className += "npc";
+      if (result[arrnum].npc.hasHitbox == true) {
+        newDiv.className += "npc";
+      }
       npcDiv.appendChild(newDiv)
       npcDiv.appendChild(newText)
       console.log(result);
@@ -153,15 +165,19 @@ function loadObjects(result) {
     else if (arr[0] == '{"wall"') {
       console.log("1")
       const newDiv = document.createElement("div");
-      newDiv.className += "wall";
+      if (result[arrnum].wall.hasHitbox == true) {
+        newDiv.className += "wall";
+      }
       const newTop = document.createElement("div");
       const newLeft = document.createElement("div");
       const newBottom = document.createElement("div");
       const newRight = document.createElement("div");
-      newTop.className = "topWall"
-      newLeft.className = "leftWall"
-      newBottom.className = "bottomWall"
-      newRight.className = "rightWall"
+      if (result[arrnum].wall.hasHitbox == true) {
+        newTop.className = "topWall"
+        newLeft.className = "leftWall"
+        newBottom.className = "bottomWall"
+        newRight.className = "rightWall"
+      }
       newTop.style.width = "100%";
       newRight.style.height = "100%";
       newLeft.style.height = "100%";
@@ -203,15 +219,19 @@ function loadObjects(result) {
     else if (arr[0] == '{"hazard"') {
       console.log("1")
       const newDiv = document.createElement("div");
-      newDiv.className += "hazard";
+      if (result[arrnum].hazard.hasHitbox == true) {
+        newDiv.className += "hazard";
+      }
       const newTop = document.createElement("div");
       const newLeft = document.createElement("div");
       const newBottom = document.createElement("div");
       const newRight = document.createElement("div");
-      newTop.className = "topHazard"
-      newLeft.className = "leftHazard"
-      newBottom.className = "bottomHazard"
-      newRight.className = "rightHazard"
+      if (result[arrnum].hazard.hasHitbox == true) {
+        newTop.className = "topHazard"
+        newLeft.className = "leftHazard"
+        newBottom.className = "bottomHazard"
+        newRight.className = "rightHazard"
+      }
       newTop.style.width = "100%";
       newRight.style.height = "100%";
       newLeft.style.height = "100%";
@@ -255,7 +275,9 @@ function loadObjects(result) {
       console.log("1")
       const newDiv = document.createElement("div");
       const newDiv2 = document.createElement("div");
-      newDiv.className += "portal1";
+      if (result[arrnum].portal.hasHitbox == true) {
+        newDiv.className += "portal1";
+      }
       newDiv.style.width = "10px";
       newDiv.style.height = "60px"
       newDiv.id = result[arrnum].portal.id1
@@ -264,7 +286,9 @@ function loadObjects(result) {
       newDiv.style.left = result[arrnum].portal.x1
       newDiv.style.backgroundColor = "darkblue";
       document.body.insertBefore(newDiv, document.getElementById("blank"));
-      newDiv2.className += "portal2";
+      if (result[arrnum].portal.hasHitbox == true) {
+        newDiv2.className += "portal2";
+      }
       newDiv2.style.width = "10px";
       newDiv2.style.height = "60px"
       newDiv2.id = result[arrnum].portal.id2
@@ -279,15 +303,19 @@ function loadObjects(result) {
     else if (arr[0] == '{"rep"') {
       console.log("1")
       const newDiv = document.createElement("div");
-      newDiv.className += "rep";
+      if (result[arrnum].rep.hasHitbox == true) {
+        newDiv.className += "rep";
+      }
       const newTop = document.createElement("div");
       const newLeft = document.createElement("div");
       const newBottom = document.createElement("div");
       const newRight = document.createElement("div");
-      newTop.className = "topRep"
-      newLeft.className = "leftRep"
-      newBottom.className = "bottomRep"
-      newRight.className = "rightRep"
+      if (result[arrnum].rep.hasHitbox == true) {
+        newTop.className = "topRep"
+        newLeft.className = "leftRep"
+        newBottom.className = "bottomRep"
+        newRight.className = "rightRep"
+      }
       newTop.style.width = "100%";
       newRight.style.height = "100%";
       newLeft.style.height = "100%";
@@ -333,11 +361,13 @@ function loadObjects(result) {
       const newLeft = document.createElement("div");
       const newBottom = document.createElement("div");
       const newRight = document.createElement("div");
-      newTop.className = "topDoor"
-      newLeft.className = "leftDoor"
-      newBottom.className = "bottomDoor"
-      newRight.className = "rightDoor"
-      newDiv.className += "door";
+      if (result[arrnum].UnlockDoor.hasHitbox == true) {
+        newTop.className = "topDoor"
+        newLeft.className = "leftDoor"
+        newBottom.className = "bottomDoor"
+        newRight.className = "rightDoor"
+        newDiv.className += "door";
+      }
       newTop.style.width = "100%";
       newRight.style.height = "100%";
       newLeft.style.height = "100%";
@@ -391,7 +421,10 @@ function loadObjects(result) {
       buttonFront.style.top = "5px"
       buttonFront.style.left = "5px"
       buttonFront.id = result[arrnum].UnlockDoor.buttonId
+      if (result[arrnum].UnlockDoor.hasHitbox == true)
+      {
       buttonFront.className += "button"
+      }
       buttonMid.appendChild(buttonFront)
       buttonBack.style.backgroundColor = "gray"
       buttonBack.style.width = "70px"
@@ -405,10 +438,13 @@ function loadObjects(result) {
       const newLeft2 = document.createElement("div");
       const newBottom2 = document.createElement("div");
       const newRight2 = document.createElement("div");
+      if (result[arrnum].UnlockDoor.hasHitbox == true)
+      {
       newTop2.className = "topBox"
       newLeft2.className = "leftBox"
       newBottom2.className = "bottomBox"
       newRight2.className = "rightBox"
+      }
       newTop2.style.width = "100%";
       newRight2.style.height = "100%";
       newLeft2.style.height = "100%";
@@ -443,7 +479,10 @@ function loadObjects(result) {
       newBox.appendChild(newTop2)
       newBox.appendChild(newLeft2)
       newBox.appendChild(newRight2)
+      if (result[arrnum].UnlockDoor.hasHitbox == true)
+      {
       newBox.className += "box"
+      }
       newBox.id = result[arrnum].UnlockDoor.boxId
       boxX[boxArrCounter] = parseInt(result[arrnum].UnlockDoor.boxX)
       boxY[boxArrCounter] = parseInt(result[arrnum].UnlockDoor.boxY)

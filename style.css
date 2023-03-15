@@ -34,7 +34,7 @@ body {
     left: 40%
 }
 
-p {
+.name {
     position: relative;
     top: 0px;
     left: 0px;
@@ -537,13 +537,18 @@ p {
     top: 10px;
 }
 
-.notify {
-    position:relative;
-    width:100%;
-    background-color:orange;
-    height:50px;
-    color:white;
-    display:none;
+#heIIo {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(29, 116, 29);
+    border-radius: 25px;
+    color: white;
+    border-width: 3px;
+    border-color: green;
+    position: absolute;
+    left: 40%;
+    padding: 0%;
+    margin: 0%;
+    bottom: 10px;
 }
-
-
