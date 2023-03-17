@@ -464,3 +464,14 @@ document.addEventListener("keypress", function (event) {
         hideSidebar()
     }
 });
+
+$(function(){
+	var splashes = ["Subtitle!", "Play HAIL!", "Not bad on purpose!", "Michael trapped me here!"];
+	$("#subtitle").html($("#subtitle").html().replace("Loading...", splashes[Math.floor(Math.random()*splashes.length)]));
+});
+
+function toCompSeq() {
+    if (confirm("You will lose ALL unsaved work!\nAre you sure you want to continue?") == true) {
+        window.location.replace('/Orion-Engine/compiler')
+    }
+}

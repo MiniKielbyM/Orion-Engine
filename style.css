@@ -9,19 +9,19 @@ body {
     width: 400px;
     height: 100%;
     visibility: visible;
-    background-color: grey;
+    background-color: rgb(84, 14, 169);
 }
 
 #logo {
-    width: 200px;
+    width: 250px;
 }
 
 #topLogo {
     height: 160px;
     position: absolute;
-    top: 0px;
+    top: -5px;
+    left: 75px;
     width: 400px;
-    background-color: rgb(43, 43, 43);
 }
 
 #logoText {
@@ -44,9 +44,6 @@ p {
 }
 
 #playerButton {
-    position: absolute;
-    top: 25%;
-    left: 30%;
     width: 50px;
     height: 50px;
     border-color: rgba(43, 43, 43, 0);
@@ -54,9 +51,6 @@ p {
 }
 
 #npcButton {
-    position: absolute;
-    top: 25%;
-    right: 30%;
     width: 50px;
     height: 50px;
     border-color: rgba(43, 43, 43, 0);
@@ -64,19 +58,47 @@ p {
 }
 
 #winButton {
-    position: absolute;
-    top: 35%;
-    left: 30%;
     width: 50px;
     height: 50px;
     border-color: rgba(43, 43, 43, 0);
     background-color: rgba(43, 43, 43, 0);
 }
 
+p {
+  padding: 12.5px 0;
+  margin: auto;
+}
+
+.table * {
+  margin: auto;
+}
+
+.tablerow > * {
+  margin: auto;
+}
+
+.tablecolumn > * {
+  margin: auto;
+}
+
+.tablecolumn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.tablerow {
+  display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+button {
+  cursor: pointer;
+}
+
 #wallButton {
-    position: absolute;
-    top: 35%;
-    right: 30%;
     width: 50px;
     text-align: center;
     height: 50px;
@@ -85,9 +107,6 @@ p {
 }
 
 #hazardButton {
-    position: absolute;
-    top: 45%;
-    left: 30%;
     width: 50px;
     height: 50px;
     border-color: rgba(43, 43, 43, 0);
@@ -95,9 +114,6 @@ p {
 }
 
 #doorButton {
-    position: absolute;
-    top: 45%;
-    right: 30%;
     width: 50px;
     height: 50px;
     border-color: rgba(43, 43, 43, 0);
@@ -107,10 +123,6 @@ p {
 #playerImg {
     width: 50px;
     height: 50px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    overflow: hidden;
     background-color: red;
     overflow: hidden;
 }
@@ -118,9 +130,6 @@ p {
 #npcImg {
     width: 50px;
     height: 50px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
     overflow: hidden;
     background-color: darkRed;
 }
@@ -128,9 +137,6 @@ p {
 #doorImg {
     width: 50px;
     height: 50px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
     overflow: hidden;
     background-color: aqua;
 }
@@ -138,32 +144,24 @@ p {
 #winImg {
     width: 50px;
     height: 50px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
     background-color: rgb(0, 203, 0);
 }
 
 #wallImg {
     width: 50px;
     height: 50px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
     background-color: blue;
 }
 
 #hazardImg {
     width: 50px;
     height: 50px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
     background-color: rgb(255, 111, 0);
 }
 
 #hazardName {
     font-size: 14px;
+    padding: 12.5px 0;
     text-align: center;
 }
 
@@ -171,9 +169,6 @@ p {
     width: 50px;
     height: 50px;
     background-color: red;
-    position: absolute;
-    left: 0px;
-    top: 0px;
 }
 
 #confirm {
@@ -218,18 +213,19 @@ p {
 }
 
 #confirmNpcText {
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    right: 40%;
-    top: 10px;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  right: 550px;
+  top: 10px;
 }
+
 
 .blank {
     position: absolute;
@@ -238,13 +234,14 @@ p {
 }
 
 #npcText {
-    position: absolute;
-    top: 40px;
-    left: 25%;
-    width: 500px;
-    height: 100px;
-    text-align: left;
+  position: absolute;
+  top: 40px;
+  right: 312px;
+  width: 500px;
+  height: 100px;
+  resize: none;
 }
+
 
 #npcTextArea {
     visibility: hidden;
@@ -282,6 +279,15 @@ p {
     left: 5%;
     padding: 0%;
     position: absolute;
+}
+.tb1 > div { 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tb2 > div {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #wallSizeButton {
@@ -393,23 +399,20 @@ p {
 }
 
 #Download {
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: 40%;
-    padding: 0%;
-    margin: 0%;
-    bottom: 80px;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  padding: 0%;
+  margin: 5%;
 }
 
 #compiler {
-    width: 100px;
+	width: 100px;
     height: 50px;
     text-align: center;
     background-color: rgb(29, 116, 29);
@@ -417,9 +420,324 @@ p {
     color: white;
     border-width: 3px;
     border-color: green;
+}
+
+#subtitle {
+  user-select: none;
+	text-align: center;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 0px #000;
+	position: relative;
+    bottom: 80px;
+    left: 20px;
+    animation: subtitle .25s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+    font-family: sans-serif;
+}
+
+.subwrap {
+  position: relative;
+  top: 45px;
+  right: 100px;
+}
+
+@keyframes subtitle {
+	0%
+		{ transform: scale(0.875) rotate(1deg) }
+	100% 
+		{ transform: scale(1) rotate(-1deg) }
+}
+
+.tabs {
+  font-size: 0;
+  margin: 25px 0;
+  width: 400px;
+  position: relative;
+  top: 200px;
+  font-family: 'Alegreya Sans SC', serif;
+}
+
+.tabs:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.tabs .tab {
+  display: inline;
+}
+
+.tab-label {
+  font-weight: 600;
+  user-select: none;
+}
+
+.t1 {
+  background: #951ac9;
+}
+
+.t2 {
+  background: #db590d;
+}
+
+.t3 {
+  background: #db0d59;
+}
+
+.tr1:checked + .t1 {
+  background: #7914a4; 
+}
+
+.tr1:checked ~ .tc1 .tb1 {
+  background: #7914a4; 
+}
+
+.tr2:checked ~ .t2 {
+  background: #d4540a; 
+}
+
+.tr2:checked ~ .tc2 .tb2 {
+  background: #d4540a; 
+}
+
+.tr3:checked ~ .t3 {
+  background: #c00e4f; 
+}
+
+.tr3:checked ~ .tc3 .tb3 {
+  background: #c00e4f; 
+}
+
+
+.tabs .tab-label {
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1rem;
+  left: 1px;
+  margin-left: -1px;
+  padding: 10px; 
+  position: relative;
+  vertical-align: bottom;
+    border-radius: 1em 1em 0 0;
+}
+
+.tabs .tab > [type="radio"] {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  opacity: 0;
+  position: fixed;
+  width: 1px;
+  z-index: -1;
+}
+
+.tabs .tab-panel {
+  display: inline;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  width: 0;
+}
+
+.tab-content {
+  height: 100%;
+}
+
+.tabs .tab-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  background: white;
+  padding: 0 20px;
+  float: right;
+  font-size: 16px;
+  font-size: 1rem;
+  overflow: auto;
+  margin-top: -1px;
+  width: 100%;
+}
+
+.tabs .tab {
+  background: white;
+  border-bottom-width: 0;
+  padding-bottom: 11px;
+  z-index: 1;
+}
+
+.tabs .tab [type="radio"]:checked ~ .tab-panel {
+  display: inline;
+}
+
+
+/*
+
+=======================================
+INTERNET EXPLORER 8 and below 
+=======================================
+
+*/
+@media \0screen\,screen\9 {
+  /* IE7 and IE6 */
+  .tabs {
+    zoom: 1;
+  }
+  
+  /* IE8 and below */
+  .tabs .tab .tab-radio {
+    filter: Alpha(opacity=0);
     position: absolute;
-    left: 40%;
-    padding: 0%;
-    margin: 0%;
-    bottom: 160px;
+    z-index: -1;
+  }
+  
+  /* IE7 and IE6 */
+  .tabs .tab .tab-panel, {
+    display: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+  
+  /* IE7 and IE6 */
+  .tabs .tab-content, {
+    float: none;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    width: auto;
+  }
+  
+  /* IE8 and below */
+  .tabs .checked label {
+    background: white;
+    border-bottom-width: 0;
+    padding-bottom: 11px;
+    z-index: 1;
+  }
+  
+  /* IE8 */
+  .tabs .checked .tab-panel {
+    display: inline;
+  }
+  /* IE7 and IE6 */
+  .tabs .checked .tab-panel, {
+    display: inline;
+    float: left;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+/*
+
+=======================================
+UNIMPORTANT STYLES BEGIN HERE
+=======================================
+
+*/
+a:link,a:visited,a:hover,a:focus,a:active {
+  color: #58C;
+}
+
+label {
+  cursor: pointer;
+}
+
+.tabs {
+  color: #222;
+}
+
+.tabs a:link,.tabs a:visited,.tabs a:hover,.tabs a:focus,.tabs a:active {
+  color: #36A;
+}
+
+body > h3 {
+  font-variant: small-caps;
+  letter-spacing: .0625em;
+}
+
+p {
+  line-height: 1.5;
+  max-width: 50em;
+}
+
+code,pre {
+  font-family: 'Lucida Console', monospace;
+}
+
+pre {
+  background: #191919;
+  color: #8DA;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+p > code {
+  background: #DED;
+  margin: -2px;
+  padding: 2px;
+}
+
+.for {
+  display: inline-block;
+  position: relative;  
+}
+
+.for:after {
+  background: #DDD;
+  bottom: 150%;
+  color: #222;
+  font-family: sans-serif;
+  font-size: 12px;
+  opacity: 0;
+  padding: .5em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  white-space: nowrap;
+}
+
+.for:hover:after {
+  opacity: 1;
+}
+
+.for.default-tab {
+  color: #8AD;
+}
+
+.for.ie8-and-below {
+  color: #DA8;
+}
+
+.for.default-tab:after {
+  content: 'For default tab';  
+}
+
+.for.ie8-and-below:after {
+  content: 'For IE8 and below';  
+}
+
+/* and just for fun... */
+@media only screen and (max-width: 43em) {
+  .tabs .tab > label {
+    background: #BBB;
+    border-color: #999;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .tabs .tab [type="radio"]:checked + .tab-label {
+    background: #222;
+    border-color: #444;
+    color: #DDD;
+  }
 }
