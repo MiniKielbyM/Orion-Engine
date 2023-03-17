@@ -1,4 +1,7 @@
-<html><head>
+<!DOCTYPE html>
+<html>
+
+<head>
   <title>Orion</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -17,13 +20,15 @@
       <div id="button2"></div>
     </div><button id="confirmButton" onclick="confirmPlacementButton()">Confirm</button>
   </div>
+  <div id="portalObjBase"><button id="confirm" onclick="confirmPlacementPortal1()">Confirm</button></div>
+  <div id="portalObjBase2"><button id="confirm" onclick="confirmPlacementPortal2()">Confirm</button></div>
+  <div id="repObjBase"><button id="confirm" onclick="confirmPlacementRep()">Confirm</button></div>
   <div id="boxObjBase"><button id="confirm" onclick="confirmPlacementBox()">Confirm</button></div>
   <div id="hazardObjBase"><button id="confirm" onclick="confirmPlacementHazard()">Confirm</button></div>
   <div id="wallObjBase"><button id="confirm" onclick="confirmPlacementWall()">Confirm</button></div>
   <div id="winObjBase"><button id="confirm" onclick="confirmPlacementWin()">Confirm</button></div>
   <div id="npcObjBase"><button id="confirm" onclick="confirmPlacementNpc()">Confirm</button></div>
   <div id="playerObjBase"><button id="confirm" onclick="confirmPlacementPlayer()">Confirm</button></div>
-
   <div id="npcTextArea">
     <textarea id="npcText" maxlengthhn="370" placeholder="enter dialouge..."></textarea>
     <button id="confirmNpcText" onclick="confirmNpcText()">Confirm</button>
@@ -42,6 +47,17 @@
     <button id="DoorSizeButton" onclick="confirmSizingDoor()">Confirm</button>
     <input type="range" min="1" max="100" value="1" step="1" id="inputD">
     <input type="range" min="1" max="100" value="1" step="1" id="inputD2">
+  </div>
+  <div id="sliders4">
+    <button id="RepulseSizeButton" onclick="confirmSizingReps()">Confirm</button>
+    <input type="range" min="1" max="100" value="1" step="1" id="inputR">
+    <input type="range" min="1" max="100" value="1" step="1" id="inputR2">
+  </div>
+  <div id="colorPicker">
+    <input type="color" id="color" value="#FFFFFF">
+    <button id="DoorSizeButton" onclick="confirmBG()">confirm</button>
+  </div>
+</body>
     </div>
 
 <div id="sidebar">
@@ -133,6 +149,7 @@
                   </div>
                 </div>
                 <p class="name" id="portalName">Portal</p>
+
               </button>
             </div>
 
