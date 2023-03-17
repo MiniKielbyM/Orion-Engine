@@ -1,4 +1,7 @@
 {
-    "liveServer.settings.port": 5517,
-    "livePreview.defaultPreviewPath": "/workspaces/Orion-Engine/index.html"
+    "liveServer.settings.port": 5514,
+    "livePreview.defaultPreviewPath": "/workspaces/Orion-Engine/index.html",
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }
