@@ -9,6 +9,7 @@ var boxY = new Array
 var boxArrCounter = 0
 const npcDiv = document.createElement("div");
 var playerExists = false
+
 window.addEventListener('load', function () {
   upload = document.getElementById('fileInput');
 
@@ -421,9 +422,8 @@ function loadObjects(result) {
       buttonFront.style.top = "5px"
       buttonFront.style.left = "5px"
       buttonFront.id = result[arrnum].UnlockDoor.buttonId
-      if (result[arrnum].UnlockDoor.hasHitbox == true)
-      {
-      buttonFront.className += "button"
+      if (result[arrnum].UnlockDoor.hasHitbox == true) {
+        buttonFront.className += "button"
       }
       buttonMid.appendChild(buttonFront)
       buttonBack.style.backgroundColor = "gray"
@@ -438,12 +438,11 @@ function loadObjects(result) {
       const newLeft2 = document.createElement("div");
       const newBottom2 = document.createElement("div");
       const newRight2 = document.createElement("div");
-      if (result[arrnum].UnlockDoor.hasHitbox == true)
-      {
-      newTop2.className = "topBox"
-      newLeft2.className = "leftBox"
-      newBottom2.className = "bottomBox"
-      newRight2.className = "rightBox"
+      if (result[arrnum].UnlockDoor.hasHitbox == true) {
+        newTop2.className = "topBox"
+        newLeft2.className = "leftBox"
+        newBottom2.className = "bottomBox"
+        newRight2.className = "rightBox"
       }
       newTop2.style.width = "100%";
       newRight2.style.height = "100%";
@@ -479,9 +478,8 @@ function loadObjects(result) {
       newBox.appendChild(newTop2)
       newBox.appendChild(newLeft2)
       newBox.appendChild(newRight2)
-      if (result[arrnum].UnlockDoor.hasHitbox == true)
-      {
-      newBox.className += "box"
+      if (result[arrnum].UnlockDoor.hasHitbox == true) {
+        newBox.className += "box"
       }
       newBox.id = result[arrnum].UnlockDoor.boxId
       boxX[boxArrCounter] = parseInt(result[arrnum].UnlockDoor.boxX)
@@ -524,6 +522,7 @@ function loadObjects(result) {
           return false;
         }
       }
+
       var xAxisGet = result[playerNum].player.x;
       var yAxisGet = result[playerNum].player.y;
       var moveSpeed = 10;
@@ -564,6 +563,7 @@ function loadObjects(result) {
       const doors = document.querySelectorAll(".door")
       const bluePortals = document.querySelectorAll(".portal1")
       const orangePortals = document.querySelectorAll(".portal2")
+      const wins = document.querySelectorAll(".win");
       var collidedPortal = false
       console.log(hazardRights.length)
       document.onkeydown = function (event) {
@@ -575,6 +575,16 @@ function loadObjects(result) {
                 if (checkCollision(playerId, wallRights[checkNumCollide]) == true) {
                   xAxis += moveSpeed;
                   break;
+                }
+                checkNumCollide++
+              }
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < wins.length) {
+              if (wins.length > 0) {
+                if (checkCollision(playerId, wins[checkNumCollide]) == true) {
+                  console.log("u win i guess")
+                  window.location.replace('../win')
                 }
                 checkNumCollide++
               }
@@ -662,6 +672,15 @@ function loadObjects(result) {
               checkNumCollide++
             }
             checkNumCollide = 0
+            while (checkNumCollide < wins.length) {
+              if (wins.length > 0) {
+                if (checkCollision(playerId, wins[checkNumCollide]) == true) {
+                  console.log("u win i guess")
+                }
+                checkNumCollide++
+              }
+            }
+            checkNumCollide = 0
             while (checkNumCollide < bluePortals.length) {
               if (bluePortals.length > 0 && collidedPortal == false) {
                 if (checkCollision(playerId, bluePortals[checkNumCollide])) {
@@ -688,6 +707,16 @@ function loadObjects(result) {
                 if (checkCollision(playerId, wallBottoms[checkNumCollide]) == true) {
                   yAxis += moveSpeed;
                   break;
+                }
+                checkNumCollide++
+              }
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < wins.length) {
+              if (wins.length > 0) {
+                if (checkCollision(playerId, wins[checkNumCollide]) == true) {
+                  console.log("u win i guess")
+                  window.location.replace('../win')
                 }
                 checkNumCollide++
               }
@@ -773,6 +802,16 @@ function loadObjects(result) {
                 }
               }
               checkNumCollide++
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < wins.length) {
+              if (wins.length > 0) {
+                if (checkCollision(playerId, wins[checkNumCollide]) == true) {
+                  console.log("u win i guess")
+                  window.location.replace('../win')
+                }
+                checkNumCollide++
+              }
             }
             checkNumCollide = 0
             while (checkNumCollide < repLefts.length) {
@@ -881,6 +920,16 @@ function loadObjects(result) {
                 if (checkCollision(playerId, wallTops[checkNumCollide]) == true) {
                   yAxis -= moveSpeed;
                   break;
+                }
+                checkNumCollide++
+              }
+            }
+            checkNumCollide = 0
+            while (checkNumCollide < wins.length) {
+              if (wins.length > 0) {
+                if (checkCollision(playerId, wins[checkNumCollide]) == true) {
+                  console.log("u win i guess")
+                  window.location.replace('../win')
                 }
                 checkNumCollide++
               }
