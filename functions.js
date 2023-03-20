@@ -663,7 +663,7 @@ function confirmBG() {
 
 
 $(function () {
-    var splashes = ["Subtitle!", "Play HAIL!", "Not bad on purpose!", "Michael trapped me here!"];
+    var splashes = ["Subtitle!", "Play HAIL!", "Not bad on purpose!", "Michael trapped me here!", "AAAAAAAAAAA!"];
     $("#subtitle").html($("#subtitle").html().replace("Loading...", splashes[Math.floor(Math.random() * splashes.length)]));
 });
 
