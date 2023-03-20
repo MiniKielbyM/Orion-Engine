@@ -1,4 +1,6 @@
-<html><head>
+<html>
+
+<head>
   <title>Orion</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -23,7 +25,9 @@
   <div id="winObjBase"><button id="confirm" onclick="confirmPlacementWin()">Confirm</button></div>
   <div id="npcObjBase"><button id="confirm" onclick="confirmPlacementNpc()">Confirm</button></div>
   <div id="playerObjBase"><button id="confirm" onclick="confirmPlacementPlayer()">Confirm</button></div>
-
+  <div id="portalObjBase"><button id="confirm" onclick="confirmPlacementPortal1()">Confirm</button></div>
+  <div id="portalObjBase2"><button id="confirm" onclick="confirmPlacementPortal2()">Confirm</button></div>
+  <div id="repObjBase"><button id="confirm" onclick="confirmPlacementRep()">Confirm</button></div>
   <div id="npcTextArea">
     <textarea id="npcText" maxlengthhn="370" placeholder="enter dialouge..."></textarea>
     <button id="confirmNpcText" onclick="confirmNpcText()">Confirm</button>
@@ -42,130 +46,146 @@
     <button id="DoorSizeButton" onclick="confirmSizingDoor()">Confirm</button>
     <input type="range" min="1" max="100" value="1" step="1" id="inputD">
     <input type="range" min="1" max="100" value="1" step="1" id="inputD2">
-    </div>
-
-<div id="sidebar">
-
-  <div id="topLogo">
-    <img src="orion-removebg-preview.png" alt="logo" id="logo">
-    <div class="subwrap">
-    <h2 id="subtitle">Loading...</h2>
-    </div>
+  </div>
+  <div id="sliders4">
+    <button id="DoorSizeButton" onclick="confirmSizingReps()">Confirm</button>
+    <input type="range" min="1" max="100" value="1" step="1" id="inputR">
+    <input type="range" min="1" max="100" value="1" step="1" id="inputR2">
+  </div>
+  <div id="colorPicker">
+    <input type="color" id="color" value="#FFFFFF">
+    <button id="DoorSizeButton" onclick="confirmBG()">confirm</button>
   </div>
 
-  <div class="tabs">
-  
-    <div class="tab">
-      <input class="tab-radio tr1" type="radio" id="tab-1" name="tab-group-1" checked="">
-      <label class="tab-label t1" for="tab-1">Basics</label>
-      
-      <div class="tab-panel tc1">
-        <div class="tab-content tb1">
-    <div class="table">
-        <div class="tablerow">
-        <div id="playerSelect" style="
+  <div id="sidebar">
+
+    <div id="topLogo">
+      <img src="orion-removebg-preview.png" alt="logo" id="logo">
+      <div class="subwrap">
+        <h2 id="subtitle">Loading...</h2>
+      </div>
+    </div>
+
+    <div class="tabs">
+
+      <div class="tab">
+        <input class="tab-radio tr1" type="radio" id="tab-1" name="tab-group-1" checked="">
+        <label class="tab-label t1" for="tab-1">Basics</label>
+
+        <div class="tab-panel tc1">
+          <div class="tab-content tb1">
+            <div class="table">
+              <div class="tablerow">
+                <div id="playerSelect" style="
           width: 50px;
           height: 50px;
       "><button onclick="confirmPlayer()" id="playerButton">
-              <div id="playerImg">
-                <p id="playerName">Player</p>
-              </div>
-            </button>
-          </div><div id="hazardSelect" style="
+                    <div id="playerImg">
+                      <p id="playerName">Player</p>
+                    </div>
+                  </button>
+                </div>
+                <div id="hazardSelect" style="
           width: 50px;
           height: 50px;
       "><button onclick="confirmHazard()" id="hazardButton">
-            <div id="hazardImg">
-              <p id="hazardName">Hazard</p>
-            </div>
-          </button>
-        </div><div id="winSelect" style="
+                    <div id="hazardImg">
+                      <p id="hazardName">Hazard</p>
+                    </div>
+                  </button>
+                </div>
+                <div id="winSelect" style="
           width: 50px;
           height: 50px;
       ">
-            <button id="winButton" onclick="confirmWin()">
-              <div id="winImg">
-                <p id="winName">Win</p>
+                  <button id="winButton" onclick="confirmWin()">
+                    <div id="winImg">
+                      <p id="winName">Win</p>
+                    </div>
+                  </button>
+                </div>
               </div>
-            </button>
-          </div>
-        </div>
-    </div>
-        </div>
-      </div> 
-    </div>
-    
-    <div class="tab">
-      <input class="tab-radio tr2" type="radio" id="tab-2" name="tab-group-1" checked="">
-      <label class="tab-label t2" for="tab-2">Other</label>
-      
-      <div class="tab-panel tc2">
-        <div class="tab-content tb2">
-          <div class="table">
-            <div class="tablerow">
-
-              <div id="npcSelect"><button onclick="confirmNpc()" id="npcButton">
-                <div id="npcImg">
-                  <p id="npcName">NPC</p>
-                  </div>
-                </button>
-                </div>
-            
-          <div id="wallSelect">
-              <button id="wallButton" onclick="confirmWall()">
-                <div id="wallImg">
-                  <p id="wallName">Wall</p>
-                </div>
-              </button>
-              </div>
-            
-            <div id="doorSelect"><button onclick="confirmDoor()" id="doorButton">
-                <div id="doorImg">
-                  <p id="doorName">Door</p>
-                </div>
-              </button>
             </div>
-
-            <div id="portalSelect">
-              <button id="portalButton" onclick="confirmPortal1()">
-                <div id="portalImg">
-                  <div id="portalLeft">
-                  </div>
-                </div>
-                <p class="name" id="portalName">Portal</p>
-              </button>
-            </div>
-
-            <div id="repulseSelect"><button onclick="confirmRepulse()" id="repulseButton">
-              <div id="repulseImg">
-                <p class="name" id="repulseName">Repulsion</p>
-              </div>
-            </button>
-          </div>
           </div>
         </div>
-      </div> 
-    </div>
-  <div class="tab">
-      <input class="tab-radio tr3" type="radio" id="tab-3" name="tab-group-1" checked="">
-      <label class="tab-label t3" for="tab-3">Settings</label>
-      
-      <div class="tab-panel tc3">
-        <div class="tab-content tb3">
-          <div class="tab-content tb3">
+      </div>
+
+      <div class="tab">
+        <input class="tab-radio tr2" type="radio" id="tab-2" name="tab-group-1" checked="">
+        <label class="tab-label t2" for="tab-2">Other</label>
+
+        <div class="tab-panel tc2">
+          <div class="tab-content tb2">
             <div class="table">
-                <div class="tablecolumn">
-                  <input type="button" onclick="downloadFile();" value="Download" id="Download">
-                  <button onclick="toCompSeq()" id="compiler">Go to compiler</button>
+              <div class="tablerow">
+
+                <div id="npcSelect"><button onclick="confirmNpc()" id="npcButton">
+                    <div id="npcImg">
+                      <p id="npcName">NPC</p>
+                    </div>
+                  </button>
                 </div>
-                        </div>
+
+                <div id="wallSelect">
+                  <button id="wallButton" onclick="confirmWall()">
+                    <div id="wallImg">
+                      <p id="wallName">Wall</p>
+                    </div>
+                  </button>
                 </div>
+
+                <div id="doorSelect"><button onclick="confirmDoor()" id="doorButton">
+                    <div id="doorImg">
+                      <p id="doorName">Door</p>
+                    </div>
+                  </button>
+                </div>
+
+                <div id="portalSelect">
+                  <button id="portalButton" onclick="confirmPortal1()">
+                    <div id="portalImg">
+                      <div id="portalLeft">
+                      </div>
+                    </div>
+                    <p class="name" id="portalName">Portal</p>
+                  </button>
+                </div>
+
+                <div id="repulseSelect"><button onclick="confirmRepulse()" id="repulseButton">
+                    <div id="repulseImg">
+                      <p class="name" id="repulseName">Repulsion</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> 
-    </div></div></div>
+        <div class="tab">
+          <input class="tab-radio tr3" type="radio" id="tab-3" name="tab-group-1" checked="">
+          <label class="tab-label t3" for="tab-3">Settings</label>
+
+          <div class="tab-panel tc3">
+            <div class="tab-content tb3">
+              <div class="tab-content tb3">
+                <div class="table">
+                  <div class="tablecolumn">
+                    <input type="button" onclick="downloadFile();" value="Download" id="Download">
+                    <button onclick="toCompSeq()" id="compiler">Go to compiler</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
 
 
-</div></body></html>
+  </div>
+</body>
+
+</html>

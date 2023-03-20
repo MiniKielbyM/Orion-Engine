@@ -1,67 +1,67 @@
 body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #sidebar {
-    right: 0px;
-    top: 0px;
-    position: absolute;
-    width: 400px;
-    height: 100%;
-    visibility: visible;
-    background-color: rgb(84, 14, 169);
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  visibility: visible;
+  background-color: rgb(84, 14, 169);
 }
 
 #logo {
-    width: 250px;
+  width: 250px;
 }
 
 #topLogo {
-    height: 160px;
-    position: absolute;
-    top: -5px;
-    left: 75px;
-    width: 400px;
+  height: 160px;
+  position: absolute;
+  top: -5px;
+  left: 75px;
+  width: 400px;
 }
 
 #logoText {
-    display: inline;
-    color: white;
-    position: absolute;
-    bottom: 0%;
-    font-size: 64px;
-    font-family: 'Alegreya Sans SC', serif;
-    left: 40%
+  display: inline;
+  color: white;
+  position: absolute;
+  bottom: 0%;
+  font-size: 64px;
+  font-family: 'Alegreya Sans SC', serif;
+  left: 40%
 }
 
 p {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    font-weight: 1000;
-    font-size: medium;
-    font-family: 'Alegreya Sans SC', serif;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-weight: 1000;
+  font-size: medium;
+  font-family: 'Alegreya Sans SC', serif;
 }
 
 #playerButton {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(43, 43, 43, 0);
-    background-color: rgba(43, 43, 43, 0);
+  width: 50px;
+  height: 50px;
+  border-color: rgba(43, 43, 43, 0);
+  background-color: rgba(43, 43, 43, 0);
 }
 
 #npcButton {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(43, 43, 43, 0);
-    background-color: rgba(43, 43, 43, 0);
+  width: 50px;
+  height: 50px;
+  border-color: rgba(43, 43, 43, 0);
+  background-color: rgba(43, 43, 43, 0);
 }
 
 #winButton {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(43, 43, 43, 0);
-    background-color: rgba(43, 43, 43, 0);
+  width: 50px;
+  height: 50px;
+  border-color: rgba(43, 43, 43, 0);
+  background-color: rgba(43, 43, 43, 0);
 }
 
 p {
@@ -73,25 +73,25 @@ p {
   margin: auto;
 }
 
-.tablerow > * {
+.tablerow>* {
   margin: auto;
 }
 
-.tablecolumn > * {
+.tablecolumn>* {
   margin: auto;
 }
 
 .tablecolumn {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .tablerow {
   display: flex;
-    align-items: stretch;
-    flex-direction: row;
+  align-items: stretch;
+  flex-direction: row;
 }
 
 button {
@@ -99,117 +99,117 @@ button {
 }
 
 #wallButton {
-    width: 50px;
-    text-align: center;
-    height: 50px;
-    border-color: rgba(43, 43, 43, 0);
-    background-color: rgba(43, 43, 43, 0);
+  width: 50px;
+  text-align: center;
+  height: 50px;
+  border-color: rgba(43, 43, 43, 0);
+  background-color: rgba(43, 43, 43, 0);
 }
 
 #hazardButton {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(43, 43, 43, 0);
-    background-color: rgba(43, 43, 43, 0);
+  width: 50px;
+  height: 50px;
+  border-color: rgba(43, 43, 43, 0);
+  background-color: rgba(43, 43, 43, 0);
 }
 
 #doorButton {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(43, 43, 43, 0);
-    background-color: rgba(43, 43, 43, 0);
+  width: 50px;
+  height: 50px;
+  border-color: rgba(43, 43, 43, 0);
+  background-color: rgba(43, 43, 43, 0);
 }
 
 #playerImg {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    overflow: hidden;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  overflow: hidden;
 }
 
 #npcImg {
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    background-color: darkRed;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: darkRed;
 }
 
 #doorImg {
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    background-color: aqua;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: aqua;
 }
 
 #winImg {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(0, 203, 0);
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 203, 0);
 }
 
 #wallImg {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
 }
 
 #hazardImg {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(255, 111, 0);
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 111, 0);
 }
 
 #hazardName {
-    font-size: 14px;
-    padding: 12.5px 0;
-    text-align: center;
+  font-size: 14px;
+  padding: 12.5px 0;
+  text-align: center;
 }
 
 #playerObj {
-    width: 50px;
-    height: 50px;
-    background-color: red;
+  width: 50px;
+  height: 50px;
+  background-color: red;
 }
 
 #confirm {
-    visibility: hidden;
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: -10px;
+  visibility: hidden;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: -10px;
 }
 
 #clientConfirm {
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: -10px;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: -10px;
 }
 
 #clientConfirmButton {
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    top: -20px;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: -20px;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  top: -20px;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: -20px;
 }
 
 #confirmNpcText {
@@ -228,9 +228,9 @@ button {
 
 
 .blank {
-    position: absolute;
-    left: 0px;
-    top: 0px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 #npcText {
@@ -244,158 +244,159 @@ button {
 
 
 #npcTextArea {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #wallSizingArea {
 
-    position: absolute;
-    top: 40px;
-    left: 25%;
-    width: 500px;
-    height: 100px;
-    background-color: gray;
-    border-radius: 25px;
-    border-color: black;
+  position: absolute;
+  top: 40px;
+  left: 25%;
+  width: 500px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 25px;
+  border-color: black;
 }
 
 #sliders {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #input2 {
-    appearance: slider-vertical;
-    height: 90%;
-    bottom: 5%;
-    left: 0px;
-    padding: 0%;
-    transform: rotate(180deg);
-    position: absolute;
+  appearance: slider-vertical;
+  height: 90%;
+  bottom: 5%;
+  left: 0px;
+  padding: 0%;
+  transform: rotate(180deg);
+  position: absolute;
 }
 
 #input {
-    width: 90%;
-    bottom: 10px;
-    left: 5%;
-    padding: 0%;
-    position: absolute;
+  width: 90%;
+  bottom: 10px;
+  left: 5%;
+  padding: 0%;
+  position: absolute;
 }
-.tb1 > div { 
+
+.tb1>div {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.tb2 > div {
+.tb2>div {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 #wallSizeButton {
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: 35%;
-    top: 10px;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: 35%;
+  top: 10px;
 }
 
 #hazardSizeButton {
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: 35%;
-    top: 10px;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: 35%;
+  top: 10px;
 }
 
 #sliders2 {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #inputH2 {
-    appearance: slider-vertical;
-    height: 90%;
-    bottom: 5%;
-    left: 0px;
-    transform: rotate(180deg);
-    padding: 0%;
-    position: absolute;
+  appearance: slider-vertical;
+  height: 90%;
+  bottom: 5%;
+  left: 0px;
+  transform: rotate(180deg);
+  padding: 0%;
+  position: absolute;
 }
 
 #inputH {
-    width: 90%;
-    bottom: 10px;
-    left: 5%;
-    padding: 0%;
-    position: absolute;
+  width: 90%;
+  bottom: 10px;
+  left: 5%;
+  padding: 0%;
+  position: absolute;
 }
 
 #buttonObjBase {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #button1 {
-    width: 60px;
-    height: 60px;
-    background-color: rgb(255, 0, 0);
-    top: 5px;
-    left: 5px;
-    position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(255, 0, 0);
+  top: 5px;
+  left: 5px;
+  position: absolute;
 }
 
 #sliders3 {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #inputD2 {
-    appearance: slider-vertical;
-    height: 90%;
-    bottom: 5%;
-    left: 0px;
-    transform: rotate(180deg);
-    padding: 0%;
-    position: absolute;
+  appearance: slider-vertical;
+  height: 90%;
+  bottom: 5%;
+  left: 0px;
+  transform: rotate(180deg);
+  padding: 0%;
+  position: absolute;
 }
 
 #button2 {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(212, 0, 0);
-    top: 5px;
-    left: 5px;
-    position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(212, 0, 0);
+  top: 5px;
+  left: 5px;
+  position: absolute;
 }
 
 #inputD {
-    width: 90%;
-    bottom: 10px;
-    left: 5%;
-    padding: 0%;
-    position: absolute;
+  width: 90%;
+  bottom: 10px;
+  left: 5%;
+  padding: 0%;
+  position: absolute;
 }
 
 #DoorSizeButton {
-    width: 59px;
-    height: 25px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
-    position: absolute;
-    left: 35%;
-    top: 10px;
+  width: 59px;
+  height: 25px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: 35%;
+  top: 10px;
 }
 
 #Download {
@@ -412,28 +413,28 @@ button {
 }
 
 #compiler {
-	width: 100px;
-    height: 50px;
-    text-align: center;
-    background-color: rgb(29, 116, 29);
-    border-radius: 25px;
-    color: white;
-    border-width: 3px;
-    border-color: green;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
 }
 
 #subtitle {
   user-select: none;
-	text-align: center;
-	color: #FFFFFF;
-	text-shadow: 1px 1px 0px #000;
-	position: relative;
-    bottom: 80px;
-    left: 20px;
-    animation: subtitle .25s;
-	animation-direction: alternate;
-	animation-iteration-count: infinite;
-    font-family: sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px #000;
+  position: relative;
+  bottom: 80px;
+  left: 20px;
+  animation: subtitle .25s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  font-family: sans-serif;
 }
 
 .subwrap {
@@ -443,10 +444,13 @@ button {
 }
 
 @keyframes subtitle {
-	0%
-		{ transform: scale(0.875) rotate(1deg) }
-	100% 
-		{ transform: scale(1) rotate(-1deg) }
+  0% {
+    transform: scale(0.875) rotate(1deg)
+  }
+
+  100% {
+    transform: scale(1) rotate(-1deg)
+  }
 }
 
 .tabs {
@@ -485,28 +489,28 @@ button {
   background: #db0d59;
 }
 
-.tr1:checked + .t1 {
-  background: #7914a4; 
+.tr1:checked+.t1 {
+  background: #7914a4;
 }
 
-.tr1:checked ~ .tc1 .tb1 {
-  background: #7914a4; 
+.tr1:checked~.tc1 .tb1 {
+  background: #7914a4;
 }
 
-.tr2:checked ~ .t2 {
-  background: #d4540a; 
+.tr2:checked~.t2 {
+  background: #d4540a;
 }
 
-.tr2:checked ~ .tc2 .tb2 {
-  background: #d4540a; 
+.tr2:checked~.tc2 .tb2 {
+  background: #d4540a;
 }
 
-.tr3:checked ~ .t3 {
-  background: #c00e4f; 
+.tr3:checked~.t3 {
+  background: #c00e4f;
 }
 
-.tr3:checked ~ .tc3 .tb3 {
-  background: #c00e4f; 
+.tr3:checked~.tc3 .tb3 {
+  background: #c00e4f;
 }
 
 
@@ -516,13 +520,13 @@ button {
   font-size: 1rem;
   left: 1px;
   margin-left: -1px;
-  padding: 10px; 
+  padding: 10px;
   position: relative;
   vertical-align: bottom;
-    border-radius: 1em 1em 0 0;
+  border-radius: 1em 1em 0 0;
 }
 
-.tabs .tab > [type="radio"] {
+.tabs .tab>[type="radio"] {
   clip: rect(0 0 0 0);
   height: 1px;
   opacity: 0;
@@ -566,7 +570,7 @@ button {
   z-index: 1;
 }
 
-.tabs .tab [type="radio"]:checked ~ .tab-panel {
+.tabs .tab [type="radio"]:checked~.tab-panel {
   display: inline;
 }
 
@@ -579,53 +583,58 @@ INTERNET EXPLORER 8 and below
 
 */
 @media \0screen\,screen\9 {
+
   /* IE7 and IE6 */
   .tabs {
     zoom: 1;
   }
-  
+
   /* IE8 and below */
   .tabs .tab .tab-radio {
     filter: Alpha(opacity=0);
     position: absolute;
     z-index: -1;
   }
-  
+
   /* IE7 and IE6 */
-  .tabs .tab .tab-panel, {
-    display: none;
-    height: auto;
-    overflow: visible;
-    position: static;
-    width: auto;
-  }
-  
-  /* IE7 and IE6 */
-  .tabs .tab-content, {
-    float: none;
-    padding-bottom: 1px;
-    padding-top: 1px;
-    width: auto;
-  }
-  
-  /* IE8 and below */
-  .tabs .checked label {
-    background: white;
-    border-bottom-width: 0;
-    padding-bottom: 11px;
-    z-index: 1;
-  }
-  
-  /* IE8 */
-  .tabs .checked .tab-panel {
-    display: inline;
-  }
-  /* IE7 and IE6 */
-  .tabs .checked .tab-panel, {
-    display: inline;
-    float: left;
-    width: 100%;
-  }
+  .tabs .tab .tab-panel,
+  {
+  display: none;
+  height: auto;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* IE7 and IE6 */
+.tabs .tab-content,
+{
+float: none;
+padding-bottom: 1px;
+padding-top: 1px;
+width: auto;
+}
+
+/* IE8 and below */
+.tabs .checked label {
+  background: white;
+  border-bottom-width: 0;
+  padding-bottom: 11px;
+  z-index: 1;
+}
+
+/* IE8 */
+.tabs .checked .tab-panel {
+  display: inline;
+}
+
+/* IE7 and IE6 */
+.tabs .checked .tab-panel,
+{
+display: inline;
+float: left;
+width: 100%;
+}
 }
 
 
@@ -640,7 +649,11 @@ UNIMPORTANT STYLES BEGIN HERE
 =======================================
 
 */
-a:link,a:visited,a:hover,a:focus,a:active {
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
   color: #58C;
 }
 
@@ -652,11 +665,15 @@ label {
   color: #222;
 }
 
-.tabs a:link,.tabs a:visited,.tabs a:hover,.tabs a:focus,.tabs a:active {
+.tabs a:link,
+.tabs a:visited,
+.tabs a:hover,
+.tabs a:focus,
+.tabs a:active {
   color: #36A;
 }
 
-body > h3 {
+body>h3 {
   font-variant: small-caps;
   letter-spacing: .0625em;
 }
@@ -666,7 +683,8 @@ p {
   max-width: 50em;
 }
 
-code,pre {
+code,
+pre {
   font-family: 'Lucida Console', monospace;
 }
 
@@ -677,7 +695,7 @@ pre {
   padding: 1em;
 }
 
-p > code {
+p>code {
   background: #DED;
   margin: -2px;
   padding: 2px;
@@ -685,7 +703,7 @@ p > code {
 
 .for {
   display: inline-block;
-  position: relative;  
+  position: relative;
 }
 
 .for:after {
@@ -717,25 +735,26 @@ p > code {
 }
 
 .for.default-tab:after {
-  content: 'For default tab';  
+  content: 'For default tab';
 }
 
 .for.ie8-and-below:after {
-  content: 'For IE8 and below';  
+  content: 'For IE8 and below';
 }
 
 /* and just for fun... */
 @media only screen and (max-width: 43em) {
-  .tabs .tab > label {
+  .tabs .tab>label {
     background: #BBB;
     border-color: #999;
-    
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
   }
-  .tabs .tab [type="radio"]:checked + .tab-label {
+
+  .tabs .tab [type="radio"]:checked+.tab-label {
     background: #222;
     border-color: #444;
     color: #DDD;
@@ -816,4 +835,55 @@ p > code {
   font-size: 10px;
   text-align: center;
   top: 13%;
+}
+
+#colorPicker {
+  visibility: hidden;
+}
+
+#color {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 40%;
+  top: 10px;
+}
+
+#sliders4 {
+  visibility: hidden;
+}
+
+#inputR2 {
+  appearance: slider-vertical;
+  height: 90%;
+  bottom: 5%;
+  left: 0px;
+  transform: rotate(180deg);
+  padding: 0%;
+  position: absolute;
+}
+
+#inputR {
+  width: 90%;
+  bottom: 10px;
+  left: 5%;
+  padding: 0%;
+  position: absolute;
+}
+
+
+#heIIo {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+  position: absolute;
+  left: 40%;
+  padding: 0%;
+  margin: 0%;
+  bottom: 10px;
 }
