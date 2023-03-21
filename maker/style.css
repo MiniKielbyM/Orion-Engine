@@ -9,7 +9,7 @@ body {
   width: 400px;
   height: 100%;
   visibility: visible;
-  background-color: rgb(84, 14, 169);
+  background-image: linear-gradient(rgb(169, 0, 169), rgb(0, 0, 0));
 }
 
 #logo {
@@ -236,7 +236,7 @@ button {
 #npcText {
   position: absolute;
   top: 40px;
-  right: 312px;
+  right: 45%;
   width: 500px;
   height: 100px;
   resize: none;
@@ -426,12 +426,12 @@ button {
 #subtitle {
   user-select: none;
   text-align: center;
-  color: #FFFFFF;
+  color: #f3beff;
   text-shadow: 1px 1px 0px #000;
   position: relative;
   bottom: 80px;
   left: 20px;
-  animation: subtitle .25s;
+  animation: subtitle 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   font-family: sans-serif;
@@ -445,11 +445,11 @@ button {
 
 @keyframes subtitle {
   0% {
-    transform: scale(0.875) rotate(1deg)
+    transform: scale(0.76274958733974653947659384756839847583487584) rotate(3deg)
   }
 
   100% {
-    transform: scale(1) rotate(-1deg)
+    transform: scale(1.01485945876475647956) rotate(-3deg)
   }
 }
 
@@ -478,39 +478,39 @@ button {
 }
 
 .t1 {
-  background: #951ac9;
+  background: #7814a3;
 }
 
 .t2 {
-  background: #db590d;
+  background: darkcyan;
 }
 
 .t3 {
-  background: #db0d59;
+  background: #238223;
 }
 
 .tr1:checked+.t1 {
-  background: #7914a4;
+  background: linear-gradient(#7914a4, #7814a3);
 }
 
 .tr1:checked~.tc1 .tb1 {
-  background: #7914a4;
+  background: linear-gradient(#7914a4, #000000);
 }
 
 .tr2:checked~.t2 {
-  background: #d4540a;
+  background: darkcyan;
 }
 
 .tr2:checked~.tc2 .tb2 {
-  background: #d4540a;
+  background: linear-gradient(darkcyan, black);
 }
 
 .tr3:checked~.t3 {
-  background: #c00e4f;
+  background: linear-gradient(rgb(35, 130, 35), #238223);
 }
 
 .tr3:checked~.tc3 .tb3 {
-  background: #c00e4f;
+  background: linear-gradient(rgb(35, 130, 35), black);
 }
 
 
