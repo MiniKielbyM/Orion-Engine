@@ -409,10 +409,12 @@ button {
   border-width: 3px;
   border-color: green;
   padding: 0%;
-  margin: 5%;
+  margin: 2.5%;
 }
 
 #compiler {
+  padding: 0%;
+  margin: 2.5%;
   width: 100px;
   height: 50px;
   text-align: center;

@@ -637,16 +637,6 @@ window.addEventListener('keydown', function (e) {
     if (`${e.key}` == "Enter") {
         hideSidebar();
     }
-    if (`${e.key}` == "ArrowLeft") {
-        fakeOn = false
-        console.log(fakeOn)
-        document.getElementById("fakeName").innerText = "Real"
-    }
-    if (`${e.key}` == "ArrowRight") {
-        fakeOn = true
-        console.log(fakeOn)
-        document.getElementById("fakeName").innerText = "Fake"
-    }
     if (`${e.key}` == "b") {
         if (ColorPickerOpen == false) {
             document.getElementById("colorPicker").style.visibility = "visible"
