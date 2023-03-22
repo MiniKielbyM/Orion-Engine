@@ -662,3 +662,18 @@ function toCompSeq() {
         window.location.replace('/Orion-Engine/compiler')
     }
 }
+
+function changeHitStatus() {
+    if (fakeOn == false)
+    {
+        fakeOn = true
+        document.getElementById("decompiler").innerText = "hitbox: off"
+        return;
+    }
+    if (fakeOn == true)
+    {
+        fakeOn = false
+        document.getElementById("decompiler").innerText = "hitbox: on"
+        return;
+    }
+}

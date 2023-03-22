@@ -14,6 +14,20 @@ body {
 
 #logo {
   width: 250px;
+  animation: bounce 1s infinite;
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(110%);
+  }
+  100% {
+    transform: scale(100%);
+  }
 }
 
 #topLogo {
@@ -425,6 +439,19 @@ button {
   border-color: green;
 }
 
+#decompiler {
+  padding: 0%;
+  margin: 2.5%;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: rgb(29, 116, 29);
+  border-radius: 25px;
+  color: white;
+  border-width: 3px;
+  border-color: green;
+}
+
 #subtitle {
   user-select: none;
   text-align: center;
@@ -496,7 +523,7 @@ button {
 }
 
 .tr1:checked~.tc1 .tb1 {
-  background: linear-gradient(#7914a4, #000000);
+  background: linear-gradient(#7914a4, #260b31);
 }
 
 .tr2:checked~.t2 {
@@ -504,7 +531,7 @@ button {
 }
 
 .tr2:checked~.tc2 .tb2 {
-  background: linear-gradient(darkcyan, black);
+  background: linear-gradient(darkcyan, rgb(2, 30, 30));
 }
 
 .tr3:checked~.t3 {
@@ -512,7 +539,7 @@ button {
 }
 
 .tr3:checked~.tc3 .tb3 {
-  background: linear-gradient(rgb(35, 130, 35), black);
+  background: linear-gradient(rgb(35, 130, 35), rgb(9, 33, 9));
 }
 
 
@@ -575,6 +602,7 @@ button {
 .tabs .tab [type="radio"]:checked~.tab-panel {
   display: inline;
 }
+
 
 
 /*

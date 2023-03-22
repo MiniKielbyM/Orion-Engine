@@ -79,8 +79,8 @@
                 <div id="playerSelect" style="
           width: 50px;
           height: 50px;
-      "><button onclick="confirmPlayer()" id="playerButton">
-                    <div id="playerImg">
+      "><button onclick="confirmPlayer()" id="playerButton" class="test">
+                    <div id="playerImg" class="img">
                       <p id="playerName">Player</p>
                     </div>
                   </button>
@@ -88,8 +88,8 @@
                 <div id="hazardSelect" style="
           width: 50px;
           height: 50px;
-      "><button onclick="confirmHazard()" id="hazardButton">
-                    <div id="hazardImg">
+      "><button onclick="confirmHazard()" id="hazardButton" class="test">
+                    <div id="hazardImg" class="img">
                       <p id="hazardName">Hazard</p>
                     </div>
                   </button>
@@ -98,8 +98,8 @@
           width: 50px;
           height: 50px;
       ">
-                  <button id="winButton" onclick="confirmWin()">
-                    <div id="winImg">
+                  <button id="winButton" onclick="confirmWin()" class="test">
+                    <div id="winImg" class="img">
                       <p id="winName">Win</p>
                     </div>
                   </button>
@@ -119,29 +119,29 @@
             <div class="table">
               <div class="tablerow">
 
-                <div id="npcSelect"><button onclick="confirmNpc()" id="npcButton">
-                    <div id="npcImg">
+                <div id="npcSelect"><button onclick="confirmNpc()" id="npcButton" class="test">
+                    <div id="npcImg" class="img">
                       <p id="npcName">NPC</p>
                     </div>
                   </button>
                 </div>
 
                 <div id="wallSelect">
-                  <button id="wallButton" onclick="confirmWall()">
-                    <div id="wallImg">
+                  <button id="wallButton" onclick="confirmWall()" class="test">
+                    <div id="wallImg" class="img">
                       <p id="wallName">Wall</p>
                     </div>
                   </button>
                 </div>
 
-                <div id="doorSelect"><button onclick="confirmDoor()" id="doorButton">
-                    <div id="doorImg">
+                <div id="doorSelect"><button onclick="confirmDoor()" id="doorButton" class="test">
+                    <div id="doorImg" class="img">
                       <p id="doorName">Door</p>
                     </div>
                   </button>
                 </div>
-                <div id="doorSelect"><button onclick="confirmPortal1()" id="doorButton">
-                    <div id="portalImg">
+                <div id="doorSelect"><button onclick="confirmPortal1()" id="doorButton" class="test">
+                    <div id="portalImg" class="img">
                       <p id="doorName">Portal</p>
                       <div id="portalLeft">
                       </div>
@@ -149,8 +149,8 @@
 
                   </button>
                 </div>
-                <div id="doorSelect"><button onclick="confirmRepulse()" id="doorButton">
-                  <div id="repulseImg">
+                <div id="doorSelect"><button onclick="confirmRepulse()" id="doorButton" class="test">
+                  <div id="repulseImg" class="img">
                     <p id="repulseName">Bounce</p>
                     <div id="portalLeft">
                     </div>
@@ -173,7 +173,7 @@
                   <div class="tablecolumn">
                     <input type="button" onclick="downloadFile();" value="Download" id="Download">
                     <button onclick="toCompSeq()" id="compiler">Go to compiler</button>
-                    <button onclick="changeHitStatus()" id="compiler">hibox: on</button>
+                    <button onclick="changeHitStatus()" id="decompiler">hibox: on</button>
                   </div>
                 </div>
               </div>
