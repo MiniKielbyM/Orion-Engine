@@ -4,36 +4,59 @@
 <head>
     <meta charset="utf-8">
     <style>
-        body {
-            height: 3000px;
+        h1 {
+            animation: rainbow 5s;
+            animation-iteration-count: infinite;
         }
 
-        #div {
-            width: 50px;
-            height: 50px;
-            left: 50%;
-            background-color: red;
-            position: absolute;
-        }
+        @keyframes rainbow {
+            0% {
+                color: red;
+            }
 
-        #input2 {
+            10% {
+                color: orangered;
+            }
 
-            top: 10px;
-            position: absolute;
+            20% {
+                color: orange;
+            }
+
+            40% {
+                color: yellow;
+            }
+
+            50% {
+                color: yellowgreen;
+            }
+
+            60% {
+                color: green;
+            }
+
+            70% {
+                color: teal
+            }
+
+            80% {
+                color: blue
+            }
+
+            90% {
+                color: purple;
+            }
+
+            100% {
+                color: red
+            }
         }
     </style>
 </head>
 
 <body>
-    <div id="div"></div>
-    <input type="range" min="1" max="100" value="1" step="1" id="input">
-    <input type="range" min="1" max="100" value="1" step="1" id="input2">
-    <script>
-        const input2 = document.querySelector("#input2")
-        input2.addEventListener("input", (event) => { document.getElementById("div").style.width = input2.value + "%" })
-        const input = document.querySelector("#input")
-        input.addEventListener("input", (event) => { document.getElementById("div").style.height = input.value + "%" })
-    </script>
+    <div>
+        <h1>this is some text</h1>
+    </div>
 </body>
 
 </html>
