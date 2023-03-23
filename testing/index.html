@@ -4,59 +4,20 @@
 <head>
     <meta charset="utf-8">
     <style>
-        h1 {
-            animation: rainbow 5s;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes rainbow {
-            0% {
-                color: red;
-            }
-
-            10% {
-                color: orangered;
-            }
-
-            20% {
-                color: orange;
-            }
-
-            40% {
-                color: yellow;
-            }
-
-            50% {
-                color: yellowgreen;
-            }
-
-            60% {
-                color: green;
-            }
-
-            70% {
-                color: teal
-            }
-
-            80% {
-                color: blue
-            }
-
-            90% {
-                color: purple;
-            }
-
-            100% {
-                color: red
-            }
+        body {
+            background-repeat: repeat;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1>this is some text</h1>
-    </div>
+    <input type="file" accept=".png, .jpg" id="input" />
+    <script>
+        document.querySelector("#input").onchange = function () {
+            var url = URL.createObjectURL(this.files[0]);
+            document.body.style.background = "url(" + url + ") repeat";
+        }
+    </script>
 </body>
 
 </html>
