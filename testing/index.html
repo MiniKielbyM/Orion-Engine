@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <meta charset="utf-8">
     <style>
         body {
@@ -11,13 +13,20 @@
 </head>
 
 <body>
-    <input type="file" accept=".png, .jpg" id="input" />
-    <script>
-        document.querySelector("#input").onchange = function () {
-            var url = URL.createObjectURL(this.files[0]);
-            document.body.style.background = "url(" + url + ") repeat";
-        }
-    </script>
+    <input type="button" value="Send Email" onclick="sendEmail()">
+    <script>function sendEmail() {
+            Email.send({
+                Host: "sandbox.smtp.mailtrap.io",
+                Username: "79cbc441968e88",
+                Password: "e59c5274d78a5c",
+                To: 'mkielby1@gmail.com',
+                From: "test@gmail.com",
+                Subject: "Test email",
+                Body: "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+            }).then(
+                message => alert(message)
+            );
+        }</script>
 </body>
 
 </html>
